@@ -1,0 +1,1 @@
+Aqui van todos las imagenes fijas que van a ser utilizados por las vistas
