@@ -1,0 +1,1 @@
+Aca van las vistas que sera renderizadas por el index.js
