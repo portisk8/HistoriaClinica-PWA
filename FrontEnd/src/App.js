@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/headers/header';
+
 import './App.css';
+//import Header from './components/headers/header';
 
 class App extends React.Component{
 
   render(){
     return(
       <div>
+        <Header></Header>
         <h1>hello</h1>
       </div>
      
