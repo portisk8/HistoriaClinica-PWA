@@ -1,13 +1,18 @@
-class App extends React.Component{
+import React from "react";
+import logo from "../../logo.svg";
+import "../../App.css";
+import Header from "../../components/headers/header";
 
-    render(){
-      return(
-        <div>
-          <h1>hello</h1>
-        </div>
-       
-       // <Redirect from="/" to="/dashboard" />
-       /* <ul>
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header></Header>
+        <h1>hello</h1>
+      </div>
+
+      // <Redirect from="/" to="/dashboard" />
+      /* <ul>
         <li>
           <Link to="/dashboard">Dashborad</Link>
         </li>
@@ -18,9 +23,8 @@ class App extends React.Component{
           <Link to="/login">Salir</Link>
         </li>
       </ul>*/
-      );
-    }
+    );
   }
-  
-  
-  export default App;
+}
+
+export default App;
