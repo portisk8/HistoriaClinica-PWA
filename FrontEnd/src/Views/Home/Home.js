@@ -6,8 +6,12 @@ import Footer from "../../components/footer/footer";
 import Login from "../../Views/Login/Login";
 
 class App extends React.Component {
-  routeChange =()=>{
+  routeChangeLogin =()=>{
     let path = `login`;
+    this.props.history.push(path);
+  }
+  routeChangeEspecialidades =()=>{
+    let path = `Especialidades`;
     this.props.history.push(path);
   }
   render() {
@@ -16,10 +20,10 @@ class App extends React.Component {
         <Header></Header>
         <h1>Home</h1>
         <div>
-          <button onClick={this.routeChange} type="button" class="btn btn-outline-primary btn-lg btn-block">Login</button>
+          <button onClick={this.routeChangeLogin} type="button" class="btn btn-outline-primary btn-lg btn-block">Login</button>
         </div>
         <div>
-          <button href="#" type="button" class="btn btn-outline-secondary btn-lg btn-block">Especialidades</button>
+          <button onClick={this.routeChangeEspecialidades} type="button" class="btn btn-outline-secondary btn-lg btn-block">Especialidades</button>
         </div>
         <Footer></Footer>
       </div>
