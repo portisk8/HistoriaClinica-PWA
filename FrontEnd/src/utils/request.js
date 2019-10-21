@@ -1,6 +1,5 @@
 import fetch from "dva/fetch";
 // import { notification } from 'antd';
-import { routerRedux } from "dva/router";
 import axios from "axios";
 
 const codeMessage = {
