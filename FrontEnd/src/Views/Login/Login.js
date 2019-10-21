@@ -5,7 +5,7 @@ import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 
 
-class App extends React.Component {
+class Login extends React.Component {
   render() {
     return (
       <div>
@@ -21,4 +21,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Login;
