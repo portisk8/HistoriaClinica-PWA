@@ -1,0 +1,3 @@
+module.exports = infoProfesinal = {
+    items: [{Especialidad: "Urologo", Nombre: "Cristian", Apellido: "Gonzalez", Dias: "Lunes, Miercoles, Viernes", Horario: "8:00 - 12:30", Consultorio: "1"}, {Especialidad: "Urologo", Nombre: "Leonel", Apellido: "Shinguer", Dias: "Lunes, Martes, Miercoles, Viernes", Horario: "16:30 - 21:30", Consultorio: "2"}, {Especialidad: "Urologo", Nombre: "Ana Luisa", Apellido: "Stach", Dias: "Lunes, Martes, Miercoles, Jueves, Viernes", Horario: "8:00 - 13:00", Consultorio: "3"}]
+};
