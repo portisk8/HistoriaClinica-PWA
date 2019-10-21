@@ -1,7 +1,7 @@
-const arrayModel = require('../models/especialidadesModel');
+const arrayModel = require("../models/especialidadesModel");
 
 module.exports = {
-    listEspecialidades: function (req,res) {
-        res.send(arrayModel)
-    }
-}
+  listEspecialidades: function(req, res) {
+    res.status(200).send(arrayModel);
+  }
+};

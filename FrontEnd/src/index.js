@@ -3,6 +3,7 @@ import React from "react";
 import "./index.css";
 import App from "./App";
 import Home from "./Views/Home/Home";
+import Especialidades from "./Views/Especialidades/Especialidades";
 import * as serviceWorker from "./serviceWorker";
 import { Route, BrowserRouter } from "react-router-dom";
 import { render } from "react-dom";
@@ -10,6 +11,7 @@ import { render } from "react-dom";
 render(
   <BrowserRouter>
     <Route path="/" component={Home} />
+    <Route path="/Especialidades" component={Especialidades} />
   </BrowserRouter>,
   document.getElementById("root")
 );

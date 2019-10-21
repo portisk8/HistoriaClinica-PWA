@@ -1,0 +1,1 @@
+En esta carpeta va todo los datos que maneja la vista
