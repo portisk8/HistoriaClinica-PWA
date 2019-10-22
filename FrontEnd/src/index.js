@@ -7,12 +7,13 @@ import Login from "./Views/Login/Login";
 import Especialidades from "./Views/Especialidades/Especialidades";
 import Especialidad from "./Views/Especialidades/Especialidad";
 import * as serviceWorker from "./serviceWorker";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Router } from "react-router-dom";
 import { render } from "react-dom";
 
 render(
   <BrowserRouter>
-    <Route path="/Home" component={Home} />
+  <Route path="/" component={App} />
+    <Route path="/home" component={Home} />
     <Route path="/Especialidades" component={Especialidades} />
     <Route path="/Especialidad/:especialidadId" component={Especialidad} />
     <Route path="/login" component={Login} />
