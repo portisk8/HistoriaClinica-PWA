@@ -9,9 +9,31 @@ class MenuUsuario extends React.Component {
         return (
             <div>
                 <Header></Header>
-                    <h1>
-                        RESERVAR TURNOS
-                    </h1>
+                <h1>
+                    Menú Usuario
+                </h1>
+                <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    Reservar Turnos
+                </button>
+                
+                <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    Pedir Medicamentos Prescritos
+                </button>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Historial</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Historial de Turnos</option>
+                        <option>Historial de Prescripciones Médicas</option>
+                        <option>Historial Clínico</option>
+                    </select>
+                </div>
+
+                <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    Ver Detalles de Atenciones Médicas
+                </button>
+          
+
                 <Footer></Footer>
             </div>
 
