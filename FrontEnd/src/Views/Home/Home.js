@@ -5,6 +5,7 @@ import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 import SingIn from "../../Views/SingIn/SingIn";
 import { Link } from 'react-router-dom';
+import Login from "../Login/Login";
 
 class Home extends React.Component {
  /* routeChangeLogin =()=>{
@@ -32,6 +33,11 @@ class Home extends React.Component {
           <Link from="/" to="/Especialidades">
             <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
               Especialidades
+            </button>
+          </Link>
+          <Link from="/" to="/Login">
+            <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
+              Login
             </button>
           </Link>
         </div>
