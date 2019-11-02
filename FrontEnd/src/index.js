@@ -3,7 +3,7 @@ import React from "react";
 import "./index.css";
 import App from "./App";
 import Home from "./Views/Home/Home";
-import Login from "./Views/Login/Login";
+import SingIn from "./Views/SingIn/SingIn";
 import Especialidades from "./Views/Especialidades/Especialidades";
 import Especialidad from "./Views/Especialidades/Especialidad";
 import * as serviceWorker from "./serviceWorker";
@@ -16,7 +16,7 @@ render(
     <Route path="/home" component={Home} />
     <Route path="/Especialidades" component={Especialidades} />
     <Route path="/Especialidad/:especialidadId" component={Especialidad} />
-    <Route path="/login" component={Login} />
+    <Route path="/SingIn" component={SingIn} />
   </BrowserRouter>,
   document.getElementById("root")
 );

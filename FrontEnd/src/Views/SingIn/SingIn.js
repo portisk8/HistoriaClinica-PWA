@@ -5,12 +5,12 @@ import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 
 
-class Login extends React.Component {
+class SingIn extends React.Component {
   render() {
     return (
       <div>
         <Header></Header>
-        <h1>Login</h1>
+        <h1>Sing In</h1>
         <form>
           <div class="form-group">
 
@@ -56,8 +56,10 @@ class Login extends React.Component {
             </select>
           </div>
 
-        </form>
- 
+        </form> 
+        
+        
+        
         <Footer></Footer>
       </div>
       
@@ -67,4 +69,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default SingIn;
