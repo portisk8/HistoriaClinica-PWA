@@ -68,19 +68,19 @@ class Login extends React.Component{
                 
                 <div class="row">
                     <div class="col-md-6 login-form-1">
-                        <h3>Login for Form 1</h3>
+                        <h3>Iniciar sesión</h3>
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                                <input type="text" class="form-control" placeholder="Tu Email" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                                <input type="password" class="form-control" placeholder="Tu Contraseña" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btnSubmit" value="Login" />
+                                <input type="submit" class="btnSubmit" value="Ingresar" />
                             </div>
                             <div class="form-group">
-                                <a href="#" class="ForgetPwd">Forget Password?</a>
+                                <a href="#" class="ForgetPwd">¿Olvidaste tu contraseña?</a>
                             </div>
                         </form>
                     </div>

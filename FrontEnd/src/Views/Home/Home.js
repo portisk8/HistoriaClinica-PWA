@@ -22,22 +22,25 @@ class Home extends React.Component {
       <div>
         <Header></Header>
         <h1>Home</h1>
-        <div>
-          <Link from="/" to="/SingIn">
-            <button /*onClick={this.routeChangeLogin}*/type="button" class="btn btn-outline-primary btn-lg btn-block">
-              Registrar nueva cuenta
-            </button>
-          </Link>
-        </div>
+        
         <div>
           <Link from="/" to="/Especialidades">
             <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
               Especialidades
             </button>
           </Link>
+        </div>
+        <div>
           <Link from="/" to="/Login">
             <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
-              Ingresar
+              Iniciar sesión
+            </button>
+          </Link>
+        </div>
+        <div>
+          <Link from="/" to="/SingIn">
+            <button /*onClick={this.routeChangeLogin}*/type="button" class="btn btn-outline-primary btn-lg btn-block">
+              Registrar nueva cuenta
             </button>
           </Link>
         </div>
