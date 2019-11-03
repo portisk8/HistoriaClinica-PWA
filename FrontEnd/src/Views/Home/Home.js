@@ -3,8 +3,9 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
-import Login from "../../Views/Login/Login";
+import SingIn from "../../Views/SingIn/SingIn";
 import { Link } from 'react-router-dom';
+import Login from "../Login/Login";
 
 class Home extends React.Component {
  /* routeChangeLogin =()=>{
@@ -21,11 +22,27 @@ class Home extends React.Component {
       <div>
         <Header></Header>
         <h1>Home</h1>
+        
         <div>
-        <Link from="/" to="/login"><button /*onClick={this.routeChangeLogin}*/  type="button" class="btn btn-outline-primary btn-lg btn-block">Logn</button></Link>
+          <Link from="/" to="/Especialidades">
+            <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
+              Especialidades
+            </button>
+          </Link>
         </div>
         <div>
-        <Link from="/" to="/Especialidades"><button /*onClick={this.routeChangeEspecialidades}*/  type="button" class="btn btn-outline-secondary btn-lg btn-block">Especialidades</button></Link>
+          <Link from="/" to="/Login">
+            <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
+              Iniciar sesión
+            </button>
+          </Link>
+        </div>
+        <div>
+          <Link from="/" to="/SingIn">
+            <button /*onClick={this.routeChangeLogin}*/type="button" class="btn btn-outline-primary btn-lg btn-block">
+              Registrar nueva cuenta
+            </button>
+          </Link>
         </div>
         <Footer></Footer>
       </div>

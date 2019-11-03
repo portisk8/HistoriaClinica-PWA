@@ -1,7 +1,7 @@
 import { axiosRequest } from "../utils/request";
-// import CONFIG from "../common/environment";
+import { API_URL } from "../Common/environment";
 
-const __APIURL = "http://localhost:3001";
+const __APIURL = API_URL;
 
 export function getEspecialidades() {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
