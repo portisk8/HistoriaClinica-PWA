@@ -3,14 +3,14 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
-
+import { Link } from 'react-router-dom';
 
 class SingIn extends React.Component {
   render() {
     return (
       <div>
         <Header></Header>
-        <h1>Sing In</h1>
+        <h1>Registrar Nueva Cuenta</h1>
         <form>
           <div class="form-group">
 
@@ -58,7 +58,11 @@ class SingIn extends React.Component {
 
         </form> 
         
-        
+        <Link from="/" to="/MenuUsuario">
+          <button type="button" class="btn btn-outline-primary btn-lg btn-block">
+            Registrarse
+          </button>
+        </Link>
         
         <Footer></Footer>
       </div>

@@ -10,6 +10,7 @@ import * as serviceWorker from "./serviceWorker";
 import { Route, BrowserRouter, Router } from "react-router-dom";
 import { render } from "react-dom";
 import Login from "./Views/Login/Login";
+import MenuUsuario from "./Views/MenuUsuario/MenuUsuario";
 
 render(
   <BrowserRouter>
@@ -19,6 +20,7 @@ render(
     <Route path="/Especialidad/:especialidadId" component={Especialidad} />
     <Route path="/SingIn" component={SingIn} />
     <Route path="/Login" component={Login} />
+    <Route path="/MenuUsuario" component={MenuUsuario} />
   </BrowserRouter>,
   document.getElementById("root")
 );

@@ -25,7 +25,7 @@ class Home extends React.Component {
         <div>
           <Link from="/" to="/SingIn">
             <button /*onClick={this.routeChangeLogin}*/type="button" class="btn btn-outline-primary btn-lg btn-block">
-                Sing In
+              Registrar nueva cuenta
             </button>
           </Link>
         </div>
@@ -37,7 +37,7 @@ class Home extends React.Component {
           </Link>
           <Link from="/" to="/Login">
             <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
-              Login
+              Ingresar
             </button>
           </Link>
         </div>
