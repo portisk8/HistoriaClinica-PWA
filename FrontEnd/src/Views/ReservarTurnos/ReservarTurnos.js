@@ -4,7 +4,7 @@ import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 
-class ReservasTurnos extends React.Component {
+class ReservarTurnos extends React.Component {
     render(){
         return (
             <div>
@@ -22,4 +22,4 @@ class ReservasTurnos extends React.Component {
     }
 
 }
-export default ReservasTurnos;
+export default ReservarTurnos;

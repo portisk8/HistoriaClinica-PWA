@@ -11,6 +11,7 @@ import { Route, BrowserRouter, Router } from "react-router-dom";
 import { render } from "react-dom";
 import Login from "./Views/Login/Login";
 import MenuUsuario from "./Views/MenuUsuario/MenuUsuario";
+import ReservarTurnos from "./Views/ReservarTurnos/ReservarTurnos";
 
 render(
   <BrowserRouter>
@@ -21,6 +22,7 @@ render(
     <Route path="/SingIn" component={SingIn} />
     <Route path="/Login" component={Login} />
     <Route path="/MenuUsuario" component={MenuUsuario} />
+    <Route path="/ReservarTurnos" component={ReservarTurnos} />
   </BrowserRouter>,
   document.getElementById("root")
 );
