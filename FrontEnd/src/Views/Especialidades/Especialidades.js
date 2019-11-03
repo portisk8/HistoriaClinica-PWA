@@ -14,7 +14,7 @@ class Especialidades extends React.Component {
     // const especialidades = async () => await getEspecialidades();
     getEspecialidades().then(data => {
       console.log(data);
-      if (data && Array.isArray(data)){
+      if (data && Array.isArray(data.items)) {
         this.setState({ especialidadList: data.items });
       }
     });
