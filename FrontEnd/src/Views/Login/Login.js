@@ -2,13 +2,15 @@ import React from 'react';
 import './login.css';
 import Header from "../../components/headers/header";
 import { postLogin } from "../../Service/PostLogin";
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            redirect: false
         }
         this.login = this.login.bind(this);
         this.onChange = this.onChange.bind(this);
@@ -33,7 +35,7 @@ class Login extends React.Component{
                     //set local storage with the api users response
                     sessionStorage.setItem('userData',JSON.stringify(responseJSON));
                     //redirect equals true, to redirect to the component dashboard
-                   // this.setState({redirect: true});               
+                    this.setState({redirect: true});               
                 }else{//else user or pass invalid
                     alert("Datos incorrectos")
                 }
@@ -51,13 +53,13 @@ class Login extends React.Component{
 
     render(){
         //if the state.redirect equlas true, then redirect to dashboard component
-        // if(this.state.redirect){
-        //    return(<Redirect to={'/dashboard'} />);      
-        // }
-        // //if the user is stored in the local storage then redirect dashboard component
-        // if(sessionStorage.getItem("userData")){
-        //     return(<Redirect to={'/dashboard'} />);
-        // }
+         if(this.state.redirect){
+            return(<Redirect to={'/ReservarTurnos'} />);      
+         }
+         //if the user is stored in the local storage then redirect dashboard component
+        /* if(sessionStorage.getItem("userData")){
+             return(<Redirect to={'/dashboard'} />);
+         }*/
         return(
             <div>
                 <Header></Header>
