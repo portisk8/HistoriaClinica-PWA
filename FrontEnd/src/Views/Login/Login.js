@@ -1,9 +1,8 @@
 import React from 'react';
-//import {Redirect} from 'react-router-dom';
-//import {PostData} from '../../services/postLogin';
 import './login.css';
-//import styles from '../../styles/styles';
 import Header from "../../components/headers/header";
+import { postLogin } from "../../Service/PostLogin";
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component{
     constructor(props){
@@ -13,7 +12,7 @@ class Login extends React.Component{
             password: '',
             redirect: false
         }
-       // this.login = this.login.bind(this);
+        this.login = this.login.bind(this);
         this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -24,43 +23,43 @@ class Login extends React.Component{
     };//END handleSubmit()------------------------------------------------------------------------------------------------------------
 
     
-    // login(){
-    //     //if exist usernmae and pass
-    //     if(this.state.username && this.state.password){
-    //         //pass the username and pass to the postData method that performs the fetch from the postLogin.js service
-    //         PostData(this.state).then((result) => {
-    //             let responseJSON = result;
-    //             //if exist token 
-    //             if(responseJSON.token){
-    //                 //set local storage with the api users response
-    //                 sessionStorage.setItem('userData',JSON.stringify(responseJSON));
-    //                 //redirect equals true, to redirect to the component dashboard
-    //                 this.setState({redirect: true});               
-    //             }else{//else user or pass invalid
-    //                 alert("Usuario o contraseña incorrectos")
-    //             }
-    //         });
-    //     }
+    login(){
+        //if exist usernmae and pass
+        if(this.state.username && this.state.password){
+            //pass the username and pass to the postData method that performs the fetch from the postLogin.js service
+            postLogin(this.state).then(result => {
+                let responseJSON = result;
+                console.log(responseJSON)
+                //if exist token 
+                if(responseJSON.username){
+                    //set local storage with the api users response
+                    sessionStorage.setItem('userData',JSON.stringify(responseJSON));
+                    //redirect equals true, to redirect to the component dashboard
+                    this.setState({redirect: true});               
+                }else{//else user or pass invalid
+                    alert("Datos incorrectos")
+                }
+            });
+        }
        
-    // }//END login()------------------------------------------------------------------------------------------------------------
+    }//END login()------------------------------------------------------------------------------------------------------------
 
 
     onChange(e){
         //set the state username and password with the input value
         this.setState({[e.target.name]: e.target.value});
-
     }//END onChange()------------------------------------------------------------------------------------------------------------
 
 
     render(){
         //if the state.redirect equlas true, then redirect to dashboard component
-        // if(this.state.redirect){
-        //    return(<Redirect to={'/dashboard'} />);      
-        // }
-        // //if the user is stored in the local storage then redirect dashboard component
-        // if(sessionStorage.getItem("userData")){
-        //     return(<Redirect to={'/dashboard'} />);
-        // }
+         if(this.state.redirect){
+            return(<Redirect to={'/ReservarTurnos'} />);      
+         }
+         //if the user is stored in the local storage then redirect dashboard component
+       /*  if(sessionStorage.getItem("userData")){
+             return(<Redirect to={'/dashboard'} />);
+         }*/
         return(
             <div>
                 <Header></Header>
@@ -69,15 +68,15 @@ class Login extends React.Component{
                 <div class="row">
                     <div class="col-md-6 login-form-1">
                         <h3>Iniciar sesión</h3>
-                        <form>
+                        <form onSubmit={this.handleSubmit}>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tu Email" value="" />
+                                <input  type="text" name="username" onChange={this.onChange} class="form-control" placeholder="Tu Email"  />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Tu Contraseña" value="" />
+                                <input type="password" name="password" onChange={this.onChange} class="form-control" placeholder="Tu Contraseña"  />
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btnSubmit" value="Ingresar" />
+                                <input type="submit" onClick={this.login} class="btnSubmit" value="Ingresar" />
                             </div>
                             <div class="form-group">
                                 <a href="#" class="ForgetPwd">¿Olvidaste tu contraseña?</a>
