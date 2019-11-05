@@ -57,7 +57,7 @@ class Login extends React.Component{
             return(<Redirect to={'/ReservarTurnos'} />);      
          }
          //if the user is stored in the local storage then redirect dashboard component
-        /* if(sessionStorage.getItem("userData")){
+       /*  if(sessionStorage.getItem("userData")){
              return(<Redirect to={'/dashboard'} />);
          }*/
         return(
