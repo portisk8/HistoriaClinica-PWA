@@ -2,7 +2,7 @@
 var db = require("./dbConnection");
 
 //QUERYS
-const queryReservarTurno = "CALL Turno_Guardar";
+const queryTurnoGuardar = "CALL Turno_Guardar";
 
 //create class
 var Turnos = {
@@ -10,12 +10,13 @@ var Turnos = {
   turnoGuardar: turno => {
     return new Promise((resolve, reject) => {
       var query = db.query(
-        `${queryReservarTurno}('${turno.fecha}','${turno.motivo}',${turno.paciente},${turno.medico})`,
+        `${queryTurnoGuardar}('${turno.fecha}','${turno.motivo}',${turno.paciente},${turno.medico})`,
         (err, res) => {
           if (err) {
             reject(err);
           } else {
-            resolve(res);
+            var result = { exito: res[0][0]["@exito"] };
+            resolve(result);
           }
         }
       );
