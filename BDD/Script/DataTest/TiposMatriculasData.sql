@@ -1,0 +1,1 @@
+INSERT INTO `TiposMatriculas` (`descripcionTipoMatricula`)VALUE ('Medico');

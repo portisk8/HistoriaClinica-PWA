@@ -3,18 +3,23 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
+import { Link } from 'react-router-dom';
 
 class MenuUsuario extends React.Component {
     render(){
         return (
             <div>
                 <Header></Header>
+                
                 <h1>
                     Menú Usuario
                 </h1>
-                <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
-                    Reservar Turnos
-                </button>
+                
+                <Link from="/" to="/ReservarTurnos">
+                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                        Reservar Turnos
+                    </button>
+                </Link>
                 
                 <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                     Pedir Medicamentos Prescritos

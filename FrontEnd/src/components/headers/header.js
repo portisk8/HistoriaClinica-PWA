@@ -1,11 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = { message: "is header"}     
+        this.state = { message: "is header"};
+        this.logout = this.logout.bind(this);     
     }//END constructor()------------------------------------------------------------------------------------------------------------
+
+    
+    logout() {
+      //document.getElementById("btnProv").style.display = "none";
+      //set session storage empty 
+      sessionStorage.setItem("userData", "");
+      //remove all data of session storage
+      sessionStorage.clear();
+    }//END logout()------------------------------------------------------------------------------------------------------------
 
     render(){
         return(
@@ -21,7 +32,7 @@ class Header extends React.Component{
               <p>Reservar Turnos</p>
               </li>
               <li className="nav-item">
-              <p>Romper todo</p>
+              <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Salir</p></Link>
               </li>
             </ul>
           </div>
