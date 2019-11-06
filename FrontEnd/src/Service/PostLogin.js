@@ -3,11 +3,12 @@ import { API_URL } from "../Common/environment";
 
 const __APIURL = API_URL;
 
-export function getEspecialidades() {
+export function postLogin(userData) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  console.log("call api especialidades");
-  return axiosRequest(`${__APIURL}/api/especialidades`, {
-    method: "GET",
+  console.log("call api login");
+  return axiosRequest(`http://localhost:3001/api/login`, {
+    method: "POST",
+    body: JSON.stringify(userData),
     headers: {
       "Content-Type": "application/json"
       // Authorization: "Bearer " + "currentUser.token"
