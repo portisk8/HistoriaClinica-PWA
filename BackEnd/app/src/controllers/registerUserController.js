@@ -1,14 +1,24 @@
 const users = require("../models/registerRegister");
+var bcrypt = require('bcrypt');
+
+
 
 module.exports = {
   register: function(req, res) {
-    users
-      .RegisterUser(req.body.username, req.body.password)
-      .then(data => {
-        res.send(data);
-      })
-      .catch(error => {
-        res.send(error);
-      });
+    
+    var BCRYPT_SALT_ROUNDS = 12;
+    bcrypt.hash(req.body.password, BCRYPT_SALT_ROUNDS)
+    .then(function(hashedPassword) {
+    return users
+    .RegisterUser(req.body.username, hashedPassword)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(error => {
+      res.send(error);
+    });;
+})
+
+    
   }
 };
