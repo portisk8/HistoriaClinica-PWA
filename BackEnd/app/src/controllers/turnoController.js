@@ -1,7 +1,20 @@
-const arrayTurno = require('../models/turnoModel');
+const turnos = require("../models/turnosModel");
 
 module.exports = {
-    listTurno: function (req,res) {
-        res.send(arrayTurno)
-    }
-}
+  turnoGuardar: function(req, res) {
+    var turno = {
+      fecha: req.body.fecha,
+      motivo: req.body.motivo,
+      paciente: req.body.paciente,
+      medico: req.body.medico
+    };
+    turnos
+      .turnoGuardar(turno)
+      .then(data => {
+        res.send(data);
+      })
+      .catch(error => {
+        res.send(error);
+      });
+  }
+};
