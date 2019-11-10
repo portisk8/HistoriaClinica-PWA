@@ -5,7 +5,7 @@ var db = require("./dbConnection");
 //create class
 var Users = {
     //function to query all items
-    RegisterUser: (dni, username, password) => {
+    CreateUser: (dni, username, password) => {
       return new Promise((resolve, reject) => {
         const insertarUsuario = "INSERT INTO Usuarios(dni, username, pass) VALUES(?, ?, ?)";
         db.query(insertarUsuario, [parseInt(dni), username, password], (err, res) => {

@@ -10,13 +10,13 @@ const especialidadesRouter = require("./app/src/routes/especialidadesRouter");
 const infoProfesionalRouter = require("./app/src/routes/profesionalesRouter");
 const loginRouter = require("./app/src/routes/loginRouter");
 const turnosRouter = require("./app/src/routes/turnosRouter");
-const registerUserRouter = require("./app/src/routes/registerUsersRouter");
+const userRouter = require("./app/src/routes/userRouter");
 
 app.use("/api", especialidadesRouter);
 app.use("/api", infoProfesionalRouter);
 app.use("/api", loginRouter);
 app.use("/api", turnosRouter);
-app.use("/api", registerUserRouter);
+app.use("/api", userRouter);
 
 //config ports
 var port = Number(process.env.PORT || 3001);
