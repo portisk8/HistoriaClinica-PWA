@@ -29,11 +29,11 @@ class MenuUsuario extends React.Component {
                     </button>
                 </Link>
 
-                
+                <Link from="/" to="/HistorialTurnos">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Historial de Turnos
                     </button>
-                
+                </Link>
 
                 <h3>
                     Farmacia

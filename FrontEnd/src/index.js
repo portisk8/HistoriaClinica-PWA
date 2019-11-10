@@ -13,6 +13,7 @@ import Login from "./Views/Login/Login";
 import MenuUsuario from "./Views/MenuUsuario/MenuUsuario";
 import ReservarTurnos from "./Views/ReservarTurnos/ReservarTurnos";
 import TurnosDisponibles from "./Views/TurnosDisponibles/TurnosDisponibles";
+import HistorialTurnos from "./Views/HistorialTurnos/HistorialTurnos";
 
 render(
   <BrowserRouter>
@@ -25,6 +26,7 @@ render(
     <Route path="/MenuUsuario" component={MenuUsuario} />
     <Route path="/ReservarTurnos" component={ReservarTurnos} />
     <Route path="/TurnosDisponibles" component={TurnosDisponibles} />
+    <Route path="/HistorialTurnos" component={HistorialTurnos} />
 
   </BrowserRouter>,
   document.getElementById("root")
