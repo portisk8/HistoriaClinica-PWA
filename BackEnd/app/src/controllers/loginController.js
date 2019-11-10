@@ -1,5 +1,6 @@
 const loginModel = require('../models/loginModel');
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
     login: function (req,res) {
@@ -8,7 +9,8 @@ module.exports = {
           bcrypt.compare(req.body.password, user[0].pass, function(err, result){
                 if (err) throw err
                 if (result) {
-                    return res.status(200).json({ msg: "Login success" })
+                    let token = jwt.sign({ username: req.body.username }, 'keyboard', { expiresIn: 129600 }); // Sigining the token                    res.send("ok");
+                    res.send(token)
                 } else {
                     return res.status(401).json({ msg: "Invalid credencial" })
                 }
