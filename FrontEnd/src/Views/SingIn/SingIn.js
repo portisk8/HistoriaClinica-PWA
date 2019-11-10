@@ -54,7 +54,7 @@ class SingIn extends React.Component {
         dni: userData.dni,
         password: userData.password
       }
-      postLogin(userLogin)
+      //postLogin(userLogin)
     });
   }
 

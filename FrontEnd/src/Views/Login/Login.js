@@ -8,7 +8,7 @@ class Login extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            username: '',
+            dni: '',
             password: '',
             redirect: false
         }
@@ -25,13 +25,14 @@ class Login extends React.Component{
     
     login(){
         //if exist usernmae and pass
-        if(this.state.username && this.state.password){
+        if(this.state.dni && this.state.password){
+            console.log(this.state)
             //pass the username and pass to the postData method that performs the fetch from the postLogin.js service
             postLogin(this.state).then(result => {
                 let responseJSON = result;
                 console.log(responseJSON)
                 //if exist token 
-                if(responseJSON.username){
+                if(responseJSON.token){
                     //set local storage with the api users response
                     sessionStorage.setItem('userData',JSON.stringify(responseJSON));
                     //redirect equals true, to redirect to the component dashboard
@@ -48,6 +49,7 @@ class Login extends React.Component{
     onChange(e){
         //set the state username and password with the input value
         this.setState({[e.target.name]: e.target.value});
+        console.log(this.state)
     }//END onChange()------------------------------------------------------------------------------------------------------------
 
 
@@ -70,7 +72,7 @@ class Login extends React.Component{
                         <h3>Iniciar sesión</h3>
                         <form onSubmit={this.handleSubmit}>
                             <div class="form-group">
-                                <input  type="text" name="username" onChange={this.onChange} class="form-control" placeholder="Tu Email"  />
+                                <input  type="text" name="dni" onChange={this.onChange} class="form-control" placeholder="Tu Email"  />
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" onChange={this.onChange} class="form-control" placeholder="Tu Contraseña"  />
