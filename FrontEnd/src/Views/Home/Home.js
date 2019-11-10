@@ -40,15 +40,23 @@ class Home extends React.Component {
 
         <div>
           <Link from="/" to="/ReservarTurnos">
-            <button  type="button" class="btn btn-info btn-lg btn-block">
+            <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
               Reservar Turnos
             </button>
+          </Link>
+        </div>
+        <div>
+
+          <Link from="/" to="/TurnosDisponibles">
+            <button  type="button" class="btn btn-info btn-lg btn-block">
+              Turnos Diponibles
+               </button>
           </Link>
         </div>
 
         <div>
           <Link from="/" to="/HistorialClinico">
-            <button type="button" class="btn btn-info btn-lg btn-block">
+            <button type="button" class="btn btn-outline-secondary btn-lg btn-block">
               HistorialClinico
             </button>
           </Link>
