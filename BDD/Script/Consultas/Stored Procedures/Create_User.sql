@@ -10,8 +10,8 @@ BEGIN
 	DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET @exito=0;
     
     START TRANSACTION;
-		INSERT INTO `Usuarios` (`dni`,`username`,`pass`) VALUES
-		(dniU, usernameU, passU);
+		INSERT INTO Usuarios (dni,username,pass) 
+        VALUES (dniU, usernameU, passU);
         SET @exito = 1;
         SELECT @exito;
 	COMMIT;
