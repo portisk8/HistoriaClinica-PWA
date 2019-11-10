@@ -44,8 +44,15 @@ class ReservarTurnos extends React.Component {
 
                             }
 
-
                         </select>
+
+                        <div class="form-group">
+
+                            <label for="exampleFormControlInput1">Motivo</label>
+                            <input onChange={this.onChange} name="motivo" class="form-control" type="text" placeholder="Ingresar Motivo"></input>
+
+                        </div>
+
                     </div>
                 </form>
                 <Footer></Footer>
