@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/headers/header";
+import Footer from "../../components/footer/footer";
 import { getEspecialidades } from "../../Service/Especialidades";
 
 class Especialidad extends React.Component {
@@ -20,6 +21,7 @@ class Especialidad extends React.Component {
       <div>
         <Header></Header>
         Especialidad {this.state.especialidadId}
+        <Footer></Footer>
       </div>
     );
   }
