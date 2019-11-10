@@ -1,13 +1,12 @@
 //include the model (aka DB connection)
 var db = require("./dbConnection");
-
+const login = "CALL Login";
 //create class
 var loginRepository = {
   //function to query all items
   login: (dni) => {
-    const findUser = "SELECT * FROM Usuarios where dni="+dni+";";
     return new Promise((resolve, reject) => {
-      db.query(findUser, (err, res) => {
+      db.query(`${login}(${dni})`, (err, res) => {
         if (err) {
           reject(err);
         } else {

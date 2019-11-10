@@ -8,7 +8,8 @@ module.exports = {
         let login = loginModel.LoginModel(req.body.dni, req.body.password);
     
         loginRepository.login(login.dni).then(user => {
-          bcrypt.compare(login.password, user[0].pass, function(err, result){
+            
+          bcrypt.compare(login.password, user[0][0].pass, function(err, result){
                 if (err) throw err
                 if (result) {
                     let token = jwt.sign({ dni: login.dni }, 'keyboard', { expiresIn: 129600 }); // Sigining the token                    res.send("ok");
