@@ -14,29 +14,53 @@ class MenuUsuario extends React.Component {
                 <h1>
                     Menú Usuario
                 </h1>
-                
-                <Link from="/" to="/ReservarTurnos">
+                <h3>
+                    Turnos
+                </h3>
+               
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Reservar Turnos
                     </button>
-                </Link>
+               
                 
-                <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
-                    Pedir Medicamentos Prescritos
-                </button>
+                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                        Turnos Diponibles
+                    </button>
+               
 
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Historial</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Historial de Turnos</option>
-                        <option>Historial de Prescripciones Médicas</option>
-                        <option>Historial Clínico</option>
-                    </select>
-                </div>
+                
+                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                        Historial de Turnos
+                    </button>
+                
 
-                <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
-                    Ver Detalles de Atenciones Médicas
-                </button>
+                <h3>
+                    Farmacia
+                </h3>
+                
+                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                        Pedir Medicamentos Prescritos
+                    </button>
+                
+
+                
+                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                        Historial de Prescripciones Médicas
+                    </button>
+                
+                <h3>
+                    Historia Clínica
+                </h3>
+                
+                
+                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                        Historial Clínico
+                    </button>
+                
+
+                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                        Detalles de Atenciones Médicas
+                    </button>
           
 
                 <Footer></Footer>
