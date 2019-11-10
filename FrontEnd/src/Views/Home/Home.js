@@ -4,6 +4,7 @@ import hospital2 from "../../assets/img/hospital2.jpg";
 import hospital3 from "../../assets/img/hospital3.jpg";
 import hospital4 from "../../assets/img/hospital4.jpg";
 import hospital5 from "../../assets/img/hospital5.jpg";
+import hospital6 from "../../assets/img/hospital6.jpg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
@@ -30,13 +31,20 @@ class Home extends React.Component {
         
         <div>
           <Link from="/" to="/Especialidades">
-            <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
+            <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-info btn-lg btn-block">
               Especialidades
             </button>
           </Link>
         </div>
-        
 
+
+        <div>
+          <Link from="/" to="/ReservarTurnos">
+            <button  type="button" class="btn btn-info btn-lg btn-block">
+              Reservar Turnos
+            </button>
+          </Link>
+        </div>
 
 
         <div id="carouselExampleIndicators" className="carousel slide" data-interval="2000" data-ride="carousel">
@@ -51,10 +59,10 @@ class Home extends React.Component {
       <img class="d-block w-100" src={hospital3} alt="Second slide"/>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src={hospital4} alt="Third slide"/>
+      <img class="d-block w-100" src={hospital5} alt="Third slide"/>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src={hospital5} alt="Second slide"/>
+      <img class="d-block w-100" src={hospital6} alt="Second slide"/>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
