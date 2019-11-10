@@ -16,7 +16,7 @@ import TurnosDisponibles from "./Views/TurnosDisponibles/TurnosDisponibles";
 import HistorialTurnos from "./Views/HistorialTurnos/HistorialTurnos";
 import PedirMedicamentos from "./Views/PedirMedicamentos/PedirMedicamentos";
 import HistorialMedicamentos from "./Views/HistorialMedicamentos/HistorialMedicamentos";
-
+import HistorialClinico from "./Views/HistorialClinico/HistorialClinico";
 
 render(
   <BrowserRouter>
@@ -32,7 +32,8 @@ render(
     <Route path="/HistorialTurnos" component={HistorialTurnos} />
     <Route path="/PedirMedicamentos" component={PedirMedicamentos} />
     <Route path="/HistorialMedicamentos" component={HistorialMedicamentos}  />
-    
+    <Route path="/HistorialClinico" component={HistorialClinico} />
+
   </BrowserRouter>,
   document.getElementById("root")
 );

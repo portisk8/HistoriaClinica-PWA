@@ -55,11 +55,11 @@ class MenuUsuario extends React.Component {
                     Historia Clínica
                 </h3>
                 
-                
+                <Link from="/" to="/HistorialClinico">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Historial Clínico
                     </button>
-                
+                </Link>
 
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Detalles de Atenciones Médicas
