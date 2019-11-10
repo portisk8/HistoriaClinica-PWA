@@ -1,5 +1,9 @@
 import React from "react";
 import logo from "../../logo.svg";
+import hospital2 from "../../assets/img/hospital2.jpg";
+import hospital3 from "../../assets/img/hospital3.jpg";
+import hospital4 from "../../assets/img/hospital4.jpg";
+import hospital5 from "../../assets/img/hospital5.jpg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
@@ -19,11 +23,6 @@ class Home extends React.Component {
  
   render() {
 
-
-    /*$('.carousel').carousel({
-      interval: 200
-    })*/
-
     return (
       <div>
         <Header></Header>
@@ -40,21 +39,22 @@ class Home extends React.Component {
 
 
 
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" className="carousel slide" data-interval="2000" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
+   
     <div class="carousel-item active">
-      <img class="d-block w-100" src={logo} alt="First slide"/>
+      <img class="d-block w-100" src={hospital3} alt="Second slide"/>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src={logo} alt="Second slide"/>
+      <img class="d-block w-100" src={hospital4} alt="Third slide"/>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src={logo} alt="Third slide"/>
+      <img class="d-block w-100" src={hospital5} alt="Second slide"/>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
