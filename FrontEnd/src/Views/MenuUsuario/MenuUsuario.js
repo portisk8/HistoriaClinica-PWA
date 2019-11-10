@@ -23,10 +23,11 @@ class MenuUsuario extends React.Component {
                     </button>
                 </Link>
                 
+                <Link from="/" to="/TurnosDisponibles">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Turnos Diponibles
                     </button>
-               
+                </Link>
 
                 
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">

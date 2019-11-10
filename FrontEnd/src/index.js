@@ -12,6 +12,7 @@ import { render } from "react-dom";
 import Login from "./Views/Login/Login";
 import MenuUsuario from "./Views/MenuUsuario/MenuUsuario";
 import ReservarTurnos from "./Views/ReservarTurnos/ReservarTurnos";
+import TurnosDisponibles from "./Views/TurnosDisponibles/TurnosDisponibles";
 
 render(
   <BrowserRouter>
@@ -23,7 +24,8 @@ render(
     <Route path="/Login" component={Login} />
     <Route path="/MenuUsuario" component={MenuUsuario} />
     <Route path="/ReservarTurnos" component={ReservarTurnos} />
-    
+    <Route path="/TurnosDisponibles" component={TurnosDisponibles} />
+
   </BrowserRouter>,
   document.getElementById("root")
 );
