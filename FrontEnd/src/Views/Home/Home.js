@@ -30,20 +30,8 @@ class Home extends React.Component {
             </button>
           </Link>
         </div>
-        <div>
-          <Link from="/" to="/Login">
-            <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-outline-secondary btn-lg btn-block">
-              Iniciar sesión
-            </button>
-          </Link>
-        </div>
-        <div>
-          <Link from="/" to="/SingIn">
-            <button /*onClick={this.routeChangeLogin}*/type="button" class="btn btn-outline-primary btn-lg btn-block">
-              Registrar nueva cuenta
-            </button>
-          </Link>
-        </div>
+        
+        
         <Footer></Footer>
       </div>
     
