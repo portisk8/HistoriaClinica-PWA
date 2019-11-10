@@ -5,11 +5,10 @@ var db = require("./dbConnection");
 //create class
 var Users = {
     //function to query all items
-    RegisterUser: (username, password) => {
+    RegisterUser: (dni, username, password) => {
       return new Promise((resolve, reject) => {
-          //QUERYS
-        const insertarUsuario = "INSERT INTO Usuarios(username, pass) VALUES(?, ?)";
-        db.query(insertarUsuario, [username, password], (err, res) => {
+        const insertarUsuario = "INSERT INTO Usuarios(dni, username, pass) VALUES(?, ?, ?)";
+        db.query(insertarUsuario, [parseInt(dni), username, password], (err, res) => {
           if (err) {
             reject(err);
           } else {

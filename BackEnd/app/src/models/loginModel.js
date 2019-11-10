@@ -6,8 +6,8 @@ var db = require("./dbConnection");
 //create class
 var Login = {
   //function to query all items
-  getUsers: (usuarioId) => {
-    const findUser = "SELECT * FROM Usuarios where usuarioId="+usuarioId+";";
+  getUsers: (dni) => {
+    const findUser = "SELECT * FROM Usuarios where dni="+dni+";";
     return new Promise((resolve, reject) => {
       db.query(findUser, (err, res) => {
         if (err) {

@@ -10,7 +10,7 @@ module.exports = {
     bcrypt.hash(req.body.password, BCRYPT_SALT_ROUNDS)
     .then(function(hashedPassword) {
     return users
-    .RegisterUser(req.body.username, hashedPassword)
+    .RegisterUser(req.body.dni, req.body.username, hashedPassword)
     .then(data => {
       res.send(data);
     })
