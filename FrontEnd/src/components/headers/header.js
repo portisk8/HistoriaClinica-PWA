@@ -26,12 +26,14 @@ class Header extends React.Component{
           <div className="navbar-collapse collapse" id="navbarSupportedContent14" >
             <ul className="navbar-nav mr-auto">
               
-              <li className="nav-item">
-                <p>Reservar Turnos</p>
-              </li>
+            
 
               <li className="nav-item">
                 <Link from="/" to="/Login"><p style={{color: "black"}}  onClick={this.logout}>Iniciar sesión</p></Link>
+              </li>
+
+              <li className="nav-item">
+                <Link from="/" to="/HistorialClinico"><p style={{color: "black"}}  onClick={this.logout}>Historial Clinico</p></Link>
               </li>
 
               <li className="nav-item">
