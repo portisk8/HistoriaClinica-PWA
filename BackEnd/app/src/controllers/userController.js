@@ -5,12 +5,12 @@ var bcrypt = require('bcrypt');
 module.exports = {
   register: function(req, res) {
   
-   let user = userModel.UserModel(req.body.dni, req.body.username, req.body.password);
     var BCRYPT_SALT_ROUNDS = 12;
-    bcrypt.hash(user.password, BCRYPT_SALT_ROUNDS)
+    bcrypt.hash(req.body.password, BCRYPT_SALT_ROUNDS)
     .then(function(hashedPassword) {
+    let user = userModel.UserModel(req.body.dni, req.body.username, hashedPassword);
     return userRepository
-    .CreateUser(user.dni, user.username, hashedPassword)
+    .CreateUser(user)
     .then(data => {
       res.send(data);
     })
