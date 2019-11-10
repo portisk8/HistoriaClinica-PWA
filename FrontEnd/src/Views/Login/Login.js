@@ -3,7 +3,6 @@ import './login.css';
 import Header from "../../components/headers/header";
 import { postLogin } from "../../Service/PostLogin";
 import { Redirect } from 'react-router-dom';
-import Footer from "../../components/footer/footer";
 
 class Login extends React.Component{
     constructor(props){
@@ -27,7 +26,7 @@ class Login extends React.Component{
     login(){
         //if exist usernmae and pass
         if(this.state.dni && this.state.password){
-            console.log(this.state.dni, this.state.password)
+            console.log(this.state)
             //pass the username and pass to the postData method that performs the fetch from the postLogin.js service
             postLogin(this.state).then(result => {
                 let responseJSON = result;
@@ -50,14 +49,14 @@ class Login extends React.Component{
     onChange(e){
         //set the state username and password with the input value
         this.setState({[e.target.name]: e.target.value});
-        
+        console.log(this.state)
     }//END onChange()------------------------------------------------------------------------------------------------------------
 
 
     render(){
         //if the state.redirect equlas true, then redirect to dashboard component
          if(this.state.redirect){
-            return(<Redirect to={'/MenuUsuario'} />);      
+            return(<Redirect to={'/ReservarTurnos'} />);      
          }
          //if the user is stored in the local storage then redirect dashboard component
        /*  if(sessionStorage.getItem("userData")){
@@ -73,7 +72,7 @@ class Login extends React.Component{
                         <h3>Iniciar sesión</h3>
                         <form onSubmit={this.handleSubmit}>
                             <div class="form-group">
-                                <input  type="text" name="dni" onChange={this.onChange} class="form-control" placeholder="Tu DNI"  />
+                                <input  type="text" name="dni" onChange={this.onChange} class="form-control" placeholder="Tu Email"  />
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" onChange={this.onChange} class="form-control" placeholder="Tu Contraseña"  />
@@ -89,7 +88,6 @@ class Login extends React.Component{
                     
                 </div>
             </div>
-            <Footer></Footer>
         </div>
         );
     }//END render()------------------------------------------------------------------------------------------------------------
