@@ -61,10 +61,11 @@ class MenuUsuario extends React.Component {
                     </button>
                 </Link>
 
+                <Link from="/" to="/DetallesAtencionMedica">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Detalles de Atenciones Médicas
                     </button>
-          
+                </Link>
 
                 <Footer></Footer>
             </div>
