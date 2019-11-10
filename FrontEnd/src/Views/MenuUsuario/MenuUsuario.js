@@ -45,10 +45,11 @@ class MenuUsuario extends React.Component {
                     </button>
                 </Link>
 
-                
+                <Link from="/" to="/HistorialMedicamentos">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Historial de Prescripciones Médicas
                     </button>
+                </Link>
                 
                 <h3>
                     Historia Clínica
