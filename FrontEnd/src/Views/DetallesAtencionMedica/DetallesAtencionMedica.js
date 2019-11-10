@@ -1,17 +1,16 @@
-
 import React from "react";
 import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 
-class HistorialMedicamentos extends React.Component {
+class DetallesAtencionMedica extends React.Component {
     render(){
         return (
             <div>
                 <Header></Header>
                     <h1>
-                        Historial de Prescripciones Médicas
+                        Detalles de Atenciones Médicas
                     </h1>
                 <Footer></Footer>
             </div>
@@ -23,4 +22,4 @@ class HistorialMedicamentos extends React.Component {
     }
 
 }
-export default HistorialMedicamentos;
+export default DetallesAtencionMedica;

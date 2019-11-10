@@ -27,6 +27,7 @@ class Login extends React.Component{
     login(){
         //if exist usernmae and pass
         if(this.state.dni && this.state.password){
+            console.log(this.state.dni, this.state.password)
             //pass the username and pass to the postData method that performs the fetch from the postLogin.js service
             postLogin(this.state).then(result => {
                 let responseJSON = result;
@@ -49,6 +50,7 @@ class Login extends React.Component{
     onChange(e){
         //set the state username and password with the input value
         this.setState({[e.target.name]: e.target.value});
+        
     }//END onChange()------------------------------------------------------------------------------------------------------------
 
 

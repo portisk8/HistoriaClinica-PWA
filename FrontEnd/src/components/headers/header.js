@@ -20,8 +20,8 @@ class Header extends React.Component{
 
     render(){
         return(
-        <nav className="navbar navbar-dark navbar-2 bg-primary mb-4">
-         <p>Hospital PWA</p>
+        <nav className="navbar navbar-dark navbar-2 bg-info mb-4">
+         <p>HOSPITAL PWA</p>
           <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent14" aria-controls="navbarSupportedContent14" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
           <div className="navbar-collapse collapse" id="navbarSupportedContent14" >
             <ul className="navbar-nav mr-auto">
@@ -40,6 +40,9 @@ class Header extends React.Component{
 
               <li className="nav-item">
                 <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Salir</p></Link>
+              </li>
+              <li>
+                <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Home</p></Link>
               </li>
             </ul>
           </div>

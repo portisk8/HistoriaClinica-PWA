@@ -45,25 +45,27 @@ class MenuUsuario extends React.Component {
                     </button>
                 </Link>
 
-                
+                <Link from="/" to="/HistorialMedicamentos">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Historial de Prescripciones Médicas
                     </button>
+                </Link>
                 
                 <h3>
                     Historia Clínica
                 </h3>
                 
-                
+                <Link from="/" to="/HistorialClinico">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Historial Clínico
                     </button>
-                
+                </Link>
 
+                <Link from="/" to="/DetallesAtencionMedica">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Detalles de Atenciones Médicas
                     </button>
-          
+                </Link>
 
                 <Footer></Footer>
             </div>
