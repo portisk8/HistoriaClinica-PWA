@@ -46,6 +46,13 @@ class Home extends React.Component {
           </Link>
         </div>
 
+        <div>
+          <Link from="/" to="/HistorialClinico">
+            <button type="button" class="btn btn-info btn-lg btn-block">
+              HistorialClinico
+            </button>
+          </Link>
+        </div>
 
         <div id="carouselExampleIndicators" className="carousel slide" data-interval="2000" data-ride="carousel">
   <ol class="carousel-indicators">
