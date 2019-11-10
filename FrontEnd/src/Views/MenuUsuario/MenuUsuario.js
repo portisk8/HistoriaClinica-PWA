@@ -18,7 +18,7 @@ class MenuUsuario extends React.Component {
                     Turnos
                 </h3>
                 <Link from="/" to="/ReservarTurnos">
-                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    <button  type="button" class="btn btn-info btn-lg btn-block">
                         Reservar Turnos
                     </button>
                 </Link>
@@ -30,7 +30,7 @@ class MenuUsuario extends React.Component {
                 </Link>
 
                 <Link from="/" to="/HistorialTurnos">
-                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    <button  type="button" class="btn btn-info btn-lg btn-block">
                         Historial de Turnos
                     </button>
                 </Link>
@@ -46,7 +46,7 @@ class MenuUsuario extends React.Component {
                 </Link>
 
                 <Link from="/" to="/HistorialMedicamentos">
-                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    <button  type="button" class="btn btn-info btn-lg btn-block">
                         Historial de Prescripciones Médicas
                     </button>
                 </Link>
@@ -62,7 +62,7 @@ class MenuUsuario extends React.Component {
                 </Link>
 
                 <Link from="/" to="/DetallesAtencionMedica">
-                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    <button  type="button" class="btn btn-info btn-lg btn-block">
                         Detalles de Atenciones Médicas
                     </button>
                 </Link>
