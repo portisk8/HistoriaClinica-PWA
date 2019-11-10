@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/headers/header";
 import { getEspecialidades } from "../../Service/Especialidades";
-
+import Footer from "../../components/footer/footer";
 class Especialidades extends React.Component {
   constructor() {
     super();
@@ -43,6 +43,7 @@ class Especialidades extends React.Component {
               </button>
             </div>
           ))}
+          <Footer></Footer>
       </div>
     );
   }

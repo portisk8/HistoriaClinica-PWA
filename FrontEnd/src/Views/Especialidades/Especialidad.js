@@ -20,6 +20,7 @@ class Especialidad extends React.Component {
       <div>
         <Header></Header>
         Especialidad {this.state.especialidadId}
+        <Footer></Footer>
       </div>
     );
   }
