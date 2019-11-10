@@ -35,6 +35,10 @@ class Header extends React.Component{
               </li>
 
               <li className="nav-item">
+                <Link from="/" to="/HistorialClinico"><p style={{color: "black"}}  onClick={this.logout}>Historial Clinico</p></Link>
+              </li>
+
+              <li className="nav-item">
                 <Link from="/" to="/SingIn"><p style={{color: "black"}}  onClick={this.logout}>Registrar nueva cuenta</p></Link>
               </li>
 
