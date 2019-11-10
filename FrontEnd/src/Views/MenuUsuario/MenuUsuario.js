@@ -39,10 +39,11 @@ class MenuUsuario extends React.Component {
                     Farmacia
                 </h3>
                 
+                <Link from="/" to="/PedirMedicamentos">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Pedir Medicamentos Prescritos
                     </button>
-                
+                </Link>
 
                 
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
