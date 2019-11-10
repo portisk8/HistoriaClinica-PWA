@@ -12,10 +12,17 @@ import { render } from "react-dom";
 import Login from "./Views/Login/Login";
 import MenuUsuario from "./Views/MenuUsuario/MenuUsuario";
 import ReservarTurnos from "./Views/ReservarTurnos/ReservarTurnos";
+import TurnosDisponibles from "./Views/TurnosDisponibles/TurnosDisponibles";
+import HistorialTurnos from "./Views/HistorialTurnos/HistorialTurnos";
+import PedirMedicamentos from "./Views/PedirMedicamentos/PedirMedicamentos";
+import HistorialMedicamentos from "./Views/HistorialMedicamentos/HistorialMedicamentos";
+import HistorialClinico from "./Views/HistorialClinico/HistorialClinico";
+import DetallesAtencionMedica from "./Views/DetallesAtencionMedica/DetallesAtencionMedica";
 
 render(
   <BrowserRouter>
-  <Route path="/" component={App} />
+    
+    <Route path="/" component={App} />
     <Route path="/home" component={Home} />
     <Route path="/Especialidades" component={Especialidades} />
     <Route path="/Especialidad/:especialidadId" component={Especialidad} />
@@ -23,6 +30,13 @@ render(
     <Route path="/Login" component={Login} />
     <Route path="/MenuUsuario" component={MenuUsuario} />
     <Route path="/ReservarTurnos" component={ReservarTurnos} />
+    <Route path="/TurnosDisponibles" component={TurnosDisponibles} />
+    <Route path="/HistorialTurnos" component={HistorialTurnos} />
+    <Route path="/PedirMedicamentos" component={PedirMedicamentos} />
+    <Route path="/HistorialMedicamentos" component={HistorialMedicamentos}  />
+    <Route path="/HistorialClinico" component={HistorialClinico} />
+    <Route path="/DetallesAtencionMedica" component={DetallesAtencionMedica} />
+
   </BrowserRouter>,
   document.getElementById("root")
 );

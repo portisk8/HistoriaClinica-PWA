@@ -25,14 +25,21 @@ class Header extends React.Component{
           <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent14" aria-controls="navbarSupportedContent14" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
           <div className="navbar-collapse collapse" id="navbarSupportedContent14" >
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                  <p>Romper todo</p>
-              </li>
+              
               <li className="nav-item">
-              <p>Reservar Turnos</p>
+                <p>Reservar Turnos</p>
               </li>
+
               <li className="nav-item">
-              <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Salir</p></Link>
+                <Link from="/" to="/Login"><p style={{color: "black"}}  onClick={this.logout}>Iniciar sesión</p></Link>
+              </li>
+
+              <li className="nav-item">
+                <Link from="/" to="/SingIn"><p style={{color: "black"}}  onClick={this.logout}>Registrar nueva cuenta</p></Link>
+              </li>
+
+              <li className="nav-item">
+                <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Salir</p></Link>
               </li>
             </ul>
           </div>

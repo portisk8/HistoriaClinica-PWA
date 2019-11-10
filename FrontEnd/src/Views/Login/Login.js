@@ -3,6 +3,7 @@ import './login.css';
 import Header from "../../components/headers/header";
 import { postLogin } from "../../Service/PostLogin";
 import { Redirect } from 'react-router-dom';
+import Footer from "../../components/footer/footer";
 
 class Login extends React.Component{
     constructor(props){
@@ -56,7 +57,7 @@ class Login extends React.Component{
     render(){
         //if the state.redirect equlas true, then redirect to dashboard component
          if(this.state.redirect){
-            return(<Redirect to={'/ReservarTurnos'} />);      
+            return(<Redirect to={'/MenuUsuario'} />);      
          }
          //if the user is stored in the local storage then redirect dashboard component
        /*  if(sessionStorage.getItem("userData")){
@@ -88,6 +89,7 @@ class Login extends React.Component{
                     
                 </div>
             </div>
+            <Footer></Footer>
         </div>
         );
     }//END render()------------------------------------------------------------------------------------------------------------
