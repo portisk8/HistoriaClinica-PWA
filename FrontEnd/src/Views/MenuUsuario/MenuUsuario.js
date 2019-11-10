@@ -12,16 +12,16 @@ class MenuUsuario extends React.Component {
                 <Header></Header>
                 
                 <h1>
-                    Menú Usuario
+                    User Menu
                 </h1>
                 <h3>
                     Turnos
                 </h3>
-               
+                <Link from="/" to="/ReservarTurnos">
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Reservar Turnos
                     </button>
-               
+                </Link>
                 
                     <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
                         Turnos Diponibles
