@@ -1,8 +1,8 @@
 var express = require('express')
 var api = express.Router()
 
-const infoProfesionalController = require('../controllers/infoProfesionalController');
+const profesionalController = require('../controllers/profesionalesController');
 
-api.get('/infoprofesional',infoProfesionalController.listInfoProfesional);
+api.post('/profesionalPorEspecialidad',profesionalController.obtenerPorEspecialidad);
 
 module.exports = api;
