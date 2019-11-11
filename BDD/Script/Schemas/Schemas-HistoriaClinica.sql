@@ -1,8 +1,8 @@
 -- generate masive data: https://mockaroo.com/  ---------------------------------------
 
-create database HistoriaClinica;
+create database thk14slpww9jdmzo;
 
-use HistoriaClinica;
+use thk14slpww9jdmzo;
 
 -- SCHEMAS -------------------------------------------------------------------------------------------------------
 
@@ -15,14 +15,14 @@ create table Provincias(
 create table Departamentos(
     departamentoId int auto_increment,
     descripcionDept varchar(40),
-    provincia int,
+    provincia int not null,
     primary key(departamentoId) 
 );
 
 create table Localidades(
     localidadId int auto_increment,
     descripcionLoc varchar(50),
-    departamento int,
+    departamento int not null,
     primary key(localidadId)
 );
 
@@ -30,7 +30,7 @@ create table Domicilios(
     domicilioId int auto_increment,
     calle varchar(50),
     numero int,
-    localidad int,
+    localidad int not null,
     primary key(domicilioId)
 );
 
@@ -39,18 +39,23 @@ create table Generos(
     primary key(descripcionGenero)
 );
 
+create table ObrasSociales(
+    descripcionObraSoc varchar(50),
+    primary key(descripcionObraSoc)
+);
+
 
 create table Pacientes(
     numeroHistoriaClinica int,
-    numeroDniPaciente int,
+    numeroDniPaciente int unique,
     nombre varchar(30),
     apellido varchar (30),
-    sexo char(1),
+    sexo char(1) not null,
     numeroObraSocial int,
     obraSocial varchar (50),
-    fechaNacimiento date,
-    telefono double,
-    domicilio int,
+    fechaNacimiento date not null,
+    telefono varchar(12) not null,
+    domicilio int not null,
     medicoCabecera int,
     primary key(numeroHistoriaClinica)
 );
@@ -66,121 +71,147 @@ create table Especialidades(
 );
 
 create table Profesionales(
-    numeroDniProfesional int,
+    numeroDniProfesional int not null unique,
     numeroMatricula int,
     nombre varchar(30),
     apellido varchar(30),
-    especialidad varchar(60),
-    domicilio int,
-    tipoMatricula varchar(60),
+    especialidad varchar(60) not null,
+    domicilio int not null,
+    sexo char(1) not null,
+    tipoMatricula varchar(60) not null,
     primary key (numeroMatricula)
 );
 
 create table Turnos(
-    fechaHoraAsignacion datetime,
+    fechaAsignacion date not null,
+    horaAsignacion time not null,
     motivoConsulta varchar(80),
-    paciente int,
-    profesional int,
-    primary key(paciente, fechaHoraAsignacion)
+    atencionMedicaId int unique,
+    paciente int not null,
+    profesional int not null,
+    primary key(fechaAsignacion, horaAsignacion)
 );
 
 create table Emergencias(
-    estadoIngreso varchar(60),
-    practicaHecha varchar(200),
+	emergenciaId int auto_increment,
+    estadoIngreso varchar(60) not null,
+    practicaHecha varchar(200) not null,
     edadAproximada int,
+    atencionMedicaId int unique,
     paciente int,
-    fechaYhora datetime,
-    profesional int,
-    primary key(profesional, fechaYhora)
+    fecha date,
+    hora time,
+    profesional int not null,
+    primary key(emergenciaId)
 );
 
 create table Laboratorios(
-    descripcionLaboratorio varchar(60),
-    primary key(descripcionLaboratorio)
+    descripcion varchar(60),
+    primary key(descripcion)
 );
 
 create table Analisis(
-    laboratorio varchar(60),
-    paciente int,
-    fechaYhora datetime,
-    primary key (paciente, fechaYhora)
+    analisisId int auto_increment,
+    laboratorio varchar(60) not null,
+    paciente int not null,
+    fecha date,
+    atencionMedicaId int unique,
+    hora time,
+    resultado varchar(100),
+    primary key (analisisId)
 );
 
 create table Internaciones(
-    fechaIngreso datetime,
-    motivoInternacion varchar(100),
-    paciente int,
-    primary key(paciente, fechaIngreso)
+    internacionId int auto_increment,
+    fechaIngreso date not null,
+    horaIngreso time not null,
+    fechaSalida date not null,
+    horaSalida time not null,
+    motivoInternacion varchar(255) not null,
+    paciente int not null,
+    primary key(internacionId)
 );
 
 create table Consultorios(
     codigoConsultorio int,
-    descripcionConsultorio varchar(60),
+    descripcionConsultorio varchar(60) not null,
     primary key(codigoConsultorio)
 );
 
 create table Droguerias(
     nombre varchar(50),
-    telefono double,
+    telefono varchar(12),
     primary key (nombre)
 );
 
 create table Drogas(
     nombreComercial varchar(50),
     formula varchar(60),
+    stockMinimo int not null,
     drogueria varchar(50),
     primary key (nombreComercial, drogueria)
 );
 
 create table Contratos(
+    contratoId int auto_increment,
     fechaInicio datetime,
-    fechaFin datetime,
-    especificaciones varchar(250),
-    drogueria varchar(50),
-    primary key (drogueria, fechaInicio)
+    fechaFin datetime not null,
+    especificaciones varchar(250) not null,
+    drogueria varchar(50) not null,
+    primary key (contratoId)
 );
 
 
 create table Depositos(
     nombreDeposito varchar(50),
-    telefonoInterno double,
+    telefonoInterno varchar(12),
     primary key (nombreDeposito)
 );
 
 create table Almacenamientos(
-    fechaAlmacenamiento date,
-    stock int,
-    droga varchar(50),
-    drogueria varchar(50),
-    deposito varchar(50),
-    primary key (droga, drogueria, deposito, fechaAlmacenamiento)
+    almacenamientoId int auto_increment,
+    fechaAlmacenamiento date not null,
+    stockActual int not null,
+    droga varchar(50) not null,
+    drogueria varchar(50) not null,
+    deposito varchar(50) not null,
+    primary key (almacenamientoId)
 );
 
 create table AtencionMedica(
-    fechaYhora datetime,
-    duracion time,
-    diagnostico varchar(500),
-    consultorio int,
-    profesional int,
-    fechaAsignacionTurno datetime,
-    pacienteTurno int,
-    profesionalEmergencia int,
-    fechaEmergencia datetime,
-    pacienteInternacion int,
-    fechaIngresoInternacion datetime,
-    pacienteAnalisis int,
-    fechaAnalisis datetime,
-    primary key (profesional, fechaYhora)   
+    atencionMedicaId int auto_increment,
+    fechaAtencion date not null,
+    horaAtencion time not null,
+    duracion time not null,
+    consultorio int not null,
+    profesional int not null,
+    diagnostico int not null,
+    internacionId int,
+    primary key (atencionMedicaId)   
 );
 
 create table Prescripciones(
-    fechaAtencionMedica datetime,
-	profesionalAtencionMedica int,
-    cantidad varchar(60),
-    paciente int,
-    droga varchar(50),
-    drogueria varchar(50),
-    primary key(profesionalAtencionMedica, fechaAtencionMedica)
+    prescripcionesId int auto_increment,
+    atencionMedica int not null,
+    paciente int not null,
+    estado varchar(20) not null,
+    cantidad varchar(60) not null,
+    droga varchar(50) not null,
+    drogueria varchar(50) not null,
+    primary key(prescripcionesId)
+);
+
+create table Usuarios(
+    dni int unique,
+    username varchar(30),
+    pass varchar(255),	
+    primary key(dni)
+);
+
+create table Diagnosticos(
+    codigoDiagnostico int auto_increment,
+    descripcion varchar(100),
+    primary key(codigoDiagnostico)
 );
 
 
@@ -189,89 +220,130 @@ create table Prescripciones(
 
 alter table Departamentos
 add foreign key (provincia)
-references Provincias(provinciaId);
+references Provincias(provinciaId)
+on delete cascade on update cascade;
 
 alter table Localidades
 add foreign key (departamento)
-references Departamentos(departamentoId);
+references Departamentos(departamentoId)
+on delete cascade on update cascade;
 
 alter table Domicilios
 add foreign key (localidad)
-references Localidades (localidadId);
+references Localidades (localidadId)
+on delete cascade on update cascade;
 
 alter table Pacientes 
 add foreign key (medicoCabecera)
-references Profesionales (numeroMatricula),
+references Profesionales (numeroMatricula)
+on delete set null on update cascade,
 add foreign key (sexo)
-references Generos(descripcionGenero),
+references Generos(descripcionGenero)
+on update cascade,
 add foreign key (domicilio)
-references Domicilios (domicilioId);
+references Domicilios (domicilioId)
+on update cascade,
+add foreign key (obraSocial)
+references ObrasSociales (descripcionObraSoc)
+on update cascade;
 
 alter table Profesionales
 add foreign key (tipoMatricula)
-references TiposMatriculas (descripcionTipoMatricula),
+references TiposMatriculas (descripcionTipoMatricula)
+on update cascade,
 add foreign key (especialidad)
-references Especialidades (descripcionEspecialidad),
+references Especialidades (descripcionEspecialidad)
+on update cascade,
 add foreign key (domicilio)
-references Domicilios(domicilioId);
+references Domicilios(domicilioId)
+on update cascade,
+add foreign key (sexo)
+references Generos(descripcionGenero);
 
 alter table Turnos
 add foreign key (paciente)
-references Pacientes(numeroHistoriaClinica),
+references Pacientes(numeroHistoriaClinica)
+on delete cascade on update cascade,
 add foreign key (profesional)
-references Profesionales (numeroMatricula);
+references Profesionales (numeroMatricula)
+on delete cascade on update cascade,
+add foreign key (atencionMedicaId) 
+references AtencionMedica (atencionMedicaId)
+on update cascade;
 
 alter table Emergencias
 add foreign key (paciente)
-references Pacientes (numeroHistoriaClinica),
+references Pacientes (numeroHistoriaClinica)
+on delete cascade on update cascade,
 add foreign key (profesional)
-references Profesionales (numeroMatricula);
+references Profesionales (numeroMatricula)
+on delete cascade on update cascade,
+add foreign key (atencionMedicaId) 
+references AtencionMedica (atencionMedicaId)
+on update cascade;
 
 alter table Analisis
 add foreign key (laboratorio)
-references Laboratorios (descripcionLaboratorio),
+references Laboratorios (descripcion)
+on update cascade,
 add foreign key (paciente)
-references Pacientes (numeroHistoriaClinica);
+references Pacientes (numeroHistoriaClinica)
+on delete cascade on update cascade,
+add foreign key (atencionMedicaId) 
+references AtencionMedica (atencionMedicaId)
+on update cascade;
 
 alter table Internaciones
 add foreign key (paciente)
-references Pacientes (numeroHistoriaClinica);
+references Pacientes (numeroHistoriaClinica)
+on delete cascade on update cascade;
 
 alter table Contratos
 add foreign key (drogueria)
-references Droguerias (nombre);
+references Droguerias (nombre)
+on delete cascade on update cascade;
 
 alter table Drogas
 add foreign key (drogueria)
-references Droguerias (nombre);
+references Droguerias (nombre)
+on delete cascade on update cascade;
+
 
 alter table Almacenamientos
 add foreign key (droga, drogueria)
-references Drogas (nombreComercial, drogueria),
+references Drogas (nombreComercial, drogueria)
+on delete cascade on update cascade,
 add foreign key (deposito)
-references Depositos (nombreDeposito);
+references Depositos (nombreDeposito)
+on delete cascade on update cascade;
 
 alter table Prescripciones
-add foreign key (profesionalAtencionMedica, fechaAtencionMedica)
-references AtencionMedica (profesional, fechaYhora),
+add foreign key (atencionMedica)
+references AtencionMedica (AtencionMedicaId)
+on update cascade,
 add foreign key (paciente)
-references Pacientes (numeroHistoriaClinica),
+references Pacientes (numeroHistoriaClinica)
+on delete cascade on update cascade,
 add foreign key (droga, drogueria)
-references Drogas (nombreComercial, drogueria);
+references Drogas (nombreComercial, drogueria)
+on update cascade;
 
 alter table AtencionMedica
 add foreign key (consultorio)
-references Consultorios (codigoConsultorio),
+references Consultorios (codigoConsultorio)
+on update cascade,
 add foreign key (profesional)
-references Profesionales (numeroMatricula),
-add foreign key (pacienteTurno, fechaAsignacionTurno)
-references Turnos (paciente, fechaHoraAsignacion),
-add foreign key (profesionalEmergencia, fechaEmergencia)
-references Emergencias (profesional, fechaYhora),
-add foreign key (pacienteInternacion, fechaIngresoInternacion)
-references Internaciones (paciente, fechaIngreso),
-add foreign key (pacienteAnalisis, fechaAnalisis)
-references Analisis (paciente, fechaYhora);
+references Profesionales (numeroMatricula)
+on update cascade,
+add foreign key (diagnostico)
+references Diagnosticos (codigoDiagnostico)
+on update cascade,
+add foreign key (internacionId)
+references Internaciones (internacionId)
+on update cascade;
+
+
+
 
 
 

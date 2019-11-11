@@ -1,7 +1,8 @@
 INSERT INTO Especialidades VALUES ('Pediatria')
-,('Oftalmologia')
+,('Medico Cirujano')
+,('Odontologia')
 ,('Rayos X')
-,('Laboratorio')
-,('Medico Clinico')
-,('Otorrinolaringologia')
-,('Medico');
+,('Medico General')
+,('Cardiologia')
+,('Bioquimico')
+,('Psicoanalisis');

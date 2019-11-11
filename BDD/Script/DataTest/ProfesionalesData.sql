@@ -1,101 +1,100 @@
-INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`tipoMatricula`,`domicilio`) VALUES 
-("85351337","082659","Carlos","Blackwell","Medico Clinico","Medico",1)
-,("66391923","803409","Callum","Glenn","Rayos X","Medico",2)
-,("63079198","897397","Derek","Owen","Medico Clinico","Medico",3)
-,("91283272","335927","Iris","Ray","Oftalmologia","Medico",4)
-,("90379734","983039","Helen","Adams","Medico","Medico",5)
-,("68208071","998046","Alfreda","Pitts","Pediatria","Medico",6)
-,("25597619","915135","Aidan","Lambert","Rayos X","Medico",7)
-,("60459158","398188","Coby","Mcpherson","Otorrinolaringologia","Medico",8)
-,("44849806","934925","Meghan","Strong","Medico Clinico","Medico",9)
-,("26345211","457865","Shea","Holden","Laboratorio","Medico",10)
-,("02204155","260327","Odette","Walter","Medico Clinico","Medico",11)
-,("02136737","599655","Mikayla","Castaneda","Otorrinolaringologia","Medico",12)
-,("40275716","792371","Lillith","Fischer","Rayos X","Medico",13)
-,("58473444","039980","Ulysses","Noble","Oftalmologia","Medico",14)
-,("57948320","517291","Dominic","Cox","Rayos X","Medico",15)
-,("74871734","052558","Cedric","Browning","Laboratorio","Medico",16)
-,("41436156","648834","Ifeoma","Castillo","Otorrinolaringologia","Medico",17)
-,("93395119","253109","Hedda","Odonnell","Rayos X","Medico",18)
-,("97945010","745722","Ava","Garrett","Oftalmologia","Medico",19)
-,("22225509","957112","Yolanda","Duke","Medico","Medico",20)
-,("80998920","151515","Lev","Kane","Oftalmologia","Medico",21)
-,("97905800","086721","Caleb","Livingston","Rayos X","Medico",22)
-,("96233240","639427","Frances","Hendricks","Rayos X","Medico",23)
-,("69860239","450619","Shay","Ford","Rayos X","Medico",24)
-,("15900065","494574","Xyla","Greene","Medico","Medico",25)
-,("18271523","834873","Michelle","Coleman","Pediatria","Medico",26)
-,("71045987","163392","Karina","Lester","Medico","Medico",27)
-,("03274427","120372","James","Kinney","Medico","Medico",28)
-,("24576457","248806","Brynn","Holt","Oftalmologia","Medico",29)
-,("33089401","947820","Devin","Stevenson","Medico","Medico",30)
-,("30661102","187995","Janna","Watkins","Pediatria","Medico",31)
-,("53351295","821867","Anjolie","Mccray","Rayos X","Medico",32)
-,("78472126","053821","Amanda","Britt","Medico","Medico",33)
-,("41677921","974514","Zephr","Perez","Medico","Medico",34)
-,("19546677","566429","Kelly","Wong","Medico","Medico",35)
-,("34924819","852097","Kyra","Terrell","Otorrinolaringologia","Medico",36)
-,("35139127","742418","Solomon","Huber","Otorrinolaringologia","Medico",37)
-,("04425404","406655","Branden","Riddle","Pediatria","Medico",38)
-,("99419603","412521","Anthony","Oneill","Otorrinolaringologia","Medico",39)
-,("22937790","842515","Walter","Sellers","Laboratorio","Medico",40)
-,("61274686","928743","Rosalyn","Stein","Pediatria","Medico",41)
-,("98801579","311261","Tamekah","Dominguez","Oftalmologia","Medico",42)
-,("54450214","918385","Tara","Bender","Laboratorio","Medico",43)
-,("71950789","411668","Garrison","Langley","Rayos X","Medico",44)
-,("05682731","721559","Kenneth","Bruce","Medico Clinico","Medico",45)
-,("48583511","005718","Aurelia","Shepard","Medico Clinico","Medico",46)
-,("39934499","771013","Mira","Hamilton","Medico Clinico","Medico",47)
-,("29259571","456015","Velma","Roy","Laboratorio","Medico",48)
-,("47454552","180135","Shelby","Hubbard","Laboratorio","Medico",49)
-,("80379796","392800","Illana","Wynn","Oftalmologia","Medico",50)
-,("99902604","423174","Audrey","Lucas","Oftalmologia","Medico",51)
-,("70147550","044070","Cairo","Salinas","Medico Clinico","Medico",52)
-,("66684104","956656","Cedric","Orr","Medico","Medico",53)
-,("44016498","239657","Erich","Solis","Otorrinolaringologia","Medico",54)
-,("73872137","166349","Norman","Patterson","Rayos X","Medico",55)
-,("09024329","907909","Martena","Holden","Rayos X","Medico",56)
-,("37395597","617615","Joseph","Evans","Rayos X","Medico",57)
-,("00228273","989202","Bruce","Cooke","Laboratorio","Medico",58)
-,("20491237","372702","Madison","King","Medico","Medico",59)
-,("47253270","365626","Lilah","Glover","Laboratorio","Medico",60)
-,("54822941","138408","Kim","Pickett","Otorrinolaringologia","Medico",61)
-,("68970622","371337","Dana","Lowery","Otorrinolaringologia","Medico",62)
-,("96017071","827594","Evan","Gibbs","Pediatria","Medico",63)
-,("95258192","208775","Alma","Berger","Oftalmologia","Medico",64)
-,("03890013","755416","Adria","Navarro","Pediatria","Medico",65)
-,("01119578","539729","Kerry","Huffman","Pediatria","Medico",66)
-,("28093553","004078","Garth","Buck","Oftalmologia","Medico",67)
-,("71855742","771015","Edward","Villarreal","Medico Clinico","Medico",68)
-,("99172086","215847","Anne","Guzman","Oftalmologia","Medico",69)
-,("09739289","321720","Clark","Wiley","Medico","Medico",70)
-,("56118470","052632","Bertha","Evans","Medico","Medico",71)
-,("17659443","413066","Maggy","Silva","Pediatria","Medico",72)
-,("31921457","257010","Ora","Griffith","Rayos X","Medico",73)
-,("33234426","854360","Ella","Booth","Rayos X","Medico",74)
-,("69854678","909676","Lester","Wall","Laboratorio","Medico",75)
-,("95658005","090534","Sylvester","Savage","Otorrinolaringologia","Medico",76)
-,("52168141","638987","Kameko","Barnes","Medico Clinico","Medico",77)
-,("23744234","003232","Amity","Payne","Medico","Medico",78)
-,("19780565","909669","Lucy","Johnson","Pediatria","Medico",79)
-,("01013448","160010","Ignatius","Drake","Otorrinolaringologia","Medico",80)
-,("75126762","123756","Slade","Kim","Medico","Medico",81)
-,("01555638","076743","Joel","Hardy","Medico","Medico",82)
-,("33393468","114859","Ivan","Richard","Laboratorio","Medico",83)
-,("86710530","609108","Eaton","Pearson","Pediatria","Medico",84)
-,("26073705","408694","Iona","Cruz","Medico","Medico",85)
-,("68668871","245568","Steven","Bernard","Otorrinolaringologia","Medico",86)
-,("63398161","834880","Kylie","Levine","Medico Clinico","Medico",87)
-,("07392013","828941","Coby","Salas","Otorrinolaringologia","Medico",88)
-,("54912423","052942","Sydnee","Delgado","Medico Clinico","Medico",89)
-,("49103662","810124","Josiah","Lynch","Rayos X","Medico",90)
-,("68618477","311544","TaShya","Fowler","Oftalmologia","Medico",91)
-,("28830830","941551","Leila","Greene","Oftalmologia","Medico",92)
-,("10904354","000580","Jescie","Gomez","Otorrinolaringologia","Medico",93)
-,("64615316","007975","Lawrence","Hudson","Medico","Medico",94)
-,("79610865","726063","Hedley","Patterson","Oftalmologia","Medico",95)
-,("86566682","958108","Malik","Wood","Otorrinolaringologia","Medico",96)
-,("48259914","292598","Gage","Mcfarland","Otorrinolaringologia","Medico",97)
-,("66963788","011202","Melvin","Woodard","Laboratorio","Medico",98)
-,("28974737","772000","Shea","Pacheco","Laboratorio","Medico",99)
-,("43398505","836883","Ryder","Valdez","Laboratorio","Medico",100);
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000000,10000,"Scott","Ulysses","Medico Cirujano",1,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000005,10010,"Silas","Todd","Medico General",2,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000010,10020,"Micah","Ralph","Psicoanalisis",3,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000015,10030,"Carlos","Sawyer","Medico Cirujano",4,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000020,10040,"Philip","Elvis","Cardiologia",5,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000025,10050,"Kane","Mason","Psicoanalisis",6,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000030,10060,"Myles","Bradley","Bioquimico",7,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000035,10070,"Rafael","Noble","Rayos X",8,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000040,10080,"Leonard","Cody","Odontologia",9,"M","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000045,10090,"Brent","Murphy","Rayos X",10,"F","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000050,10100,"Holmes","Kennan","Psicoanalisis",11,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000055,10110,"Jakeem","Herrod","Pediatria",12,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000060,10120,"Chadwick","Dorian","Cardiologia",13,"F","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000065,10130,"Reed","Dominic","Cardiologia",14,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000070,10140,"Hamilton","Gannon","Cardiologia",15,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000075,10150,"Ezra","Kamal","Bioquimico",16,"F","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000080,10160,"Mufutau","Norman","Medico Cirujano",17,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000085,10170,"Jerry","Justin","Pediatria",18,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000090,10180,"Howard","Perry","Bioquimico",19,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000095,10190,"Daquan","Felix","Rayos X",20,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000100,10200,"Nathan","Cain","Bioquimico",21,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000105,10210,"Abbot","Brian","Medico General",22,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000110,10220,"Kuame","Gage","Medico Cirujano",23,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000115,10230,"Vance","Derek","Medico Cirujano",24,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000120,10240,"August","Channing","Odontologia",25,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000125,10250,"Jasper","Kyle","Odontologia",26,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000130,10260,"Forrest","Hakeem","Medico General",27,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000135,10270,"Cody","Tyrone","Rayos X",28,"F","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000140,10280,"Lionel","Sebastian","Bioquimico",29,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000145,10290,"Kasper","Wesley","Medico Cirujano",30,"F","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000150,10300,"Forrest","Tanner","Medico General",31,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000155,10310,"Lawrence","Chaney","Medico Cirujano",32,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000160,10320,"Gabriel","Timothy","Medico Cirujano",33,"M","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000165,10330,"Jelani","Timon","Rayos X",34,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000170,10340,"Chester","Joshua","Rayos X",35,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000175,10350,"Carson","Devin","Cardiologia",36,"F","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000180,10360,"Magee","Aladdin","Psicoanalisis",37,"M","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000185,10370,"Tyler","Dominic","Rayos X",38,"F","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000190,10380,"Kermit","Shad","Medico General",39,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000195,10390,"Talon","Herrod","Psicoanalisis",40,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000200,10400,"Ashton","Hedley","Bioquimico",41,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000205,10410,"Avram","Victor","Cardiologia",42,"M","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000210,10420,"Hamilton","Felix","Medico General",43,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000215,10430,"Theodore","Leo","Psicoanalisis",44,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000220,10440,"Bert","Dexter","Medico Cirujano",45,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000225,10450,"Fritz","Reese","Cardiologia",46,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000230,10460,"Jin","Tiger","Psicoanalisis",47,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000235,10470,"Barclay","Armando","Cardiologia",48,"F","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000240,10480,"Denton","Len","Cardiologia",49,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000245,10490,"Griffin","Raymond","Medico General",50,"M","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000250,10500,"Tucker","Harlan","Psicoanalisis",51,"M","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000255,10510,"Rahim","Brian","Rayos X",52,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000260,10520,"Harding","George","Odontologia",53,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000265,10530,"Ivan","Leonard","Odontologia",54,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000270,10540,"Sean","Xanthus","Psicoanalisis",55,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000275,10550,"Kibo","Jason","Rayos X",56,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000280,10560,"Nathan","Kelly","Pediatria",57,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000285,10570,"Garrett","Bevis","Rayos X",58,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000290,10580,"Knox","Chadwick","Psicoanalisis",59,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000295,10590,"Eric","Avram","Rayos X",60,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000300,10600,"Emerson","Kenneth","Psicoanalisis",61,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000305,10610,"Callum","Lev","Pediatria",62,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000310,10620,"Caleb","Nasim","Cardiologia",63,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000315,10630,"Finn","Keith","Cardiologia",64,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000320,10640,"Rashad","Ezra","Pediatria",65,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000325,10650,"Omar","Davis","Bioquimico",66,"F","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000330,10660,"Uriel","Gabriel","Psicoanalisis",67,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000335,10670,"Cullen","Reuben","Medico General",68,"M","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000340,10680,"Merrill","Evan","Bioquimico",69,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000345,10690,"Lee","Dean","Medico General",70,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000350,10700,"Geoffrey","Phelan","Medico General",71,"F","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000355,10710,"Lionel","Rudyard","Cardiologia",72,"M","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000360,10720,"Troy","Akeem","Odontologia",73,"M","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000365,10730,"Lawrence","Micah","Medico General",74,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000370,10740,"Reece","Tate","Rayos X",75,"M","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000375,10750,"Quinlan","Colby","Pediatria",76,"F","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000380,10760,"Armando","Evan","Rayos X",77,"M","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000385,10770,"Zachery","Malachi","Cardiologia",78,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000390,10780,"Ciaran","Alexander","Bioquimico",79,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000395,10790,"Fulton","Rudyard","Psicoanalisis",80,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000400,10800,"Nolan","Raphael","Medico General",81,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000405,10810,"Sean","Addison","Rayos X",82,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000410,10820,"Ezra","Clinton","Medico Cirujano",83,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000415,10830,"Finn","Leonard","Rayos X",84,"M","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000420,10840,"Malcolm","Rafael","Odontologia",85,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000425,10850,"Myles","Uriah","Odontologia",86,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000430,10860,"Tucker","Dane","Psicoanalisis",87,"F","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000435,10870,"Brady","Abdul","Pediatria",88,"M","Fonoaudiologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000440,10880,"Asher","Randall","Bioquimico",89,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000445,10890,"Dolan","Raphael","Odontologia",90,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000450,10900,"Xander","Otto","Pediatria",91,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000455,10910,"Chester","Aquila","Pediatria",92,"F","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000460,10920,"Wylie","Armand","Pediatria",93,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000465,10930,"Victor","Declan","Odontologia",94,"F","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000470,10940,"Macon","Orson","Odontologia",95,"M","Odontologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000475,10950,"Zeph","Amery","Cardiologia",96,"M","Psicologica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000480,10960,"Darius","Kennedy","Odontologia",97,"F","Medica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000485,10970,"Chandler","Robert","Pediatria",98,"M","Bioquimica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000490,10980,"Kasper","Allistair","Cardiologia",99,"F","Farmaceutica");
+INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000495,10990,"Amery","Fletcher","Psicoanalisis",100,"F","Farmaceutica");
