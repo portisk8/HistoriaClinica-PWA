@@ -98,3 +98,7 @@ INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`
 INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000485,10970,"Chandler","Robert","Pediatria",98,"M","Bioquimica");
 INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000490,10980,"Kasper","Allistair","Cardiologia",99,"F","Farmaceutica");
 INSERT INTO `Profesionales` (`numeroDniProfesional`,`numeroMatricula`,`nombre`,`apellido`,`especialidad`,`domicilio`,`sexo`,`tipoMatricula`) VALUES (30000495,10990,"Amery","Fletcher","Psicoanalisis",100,"F","Farmaceutica");
+
+-- los numeroDni empiezan en 30000000 y se incrementa de a 5
+
+-- los numeromatricula empiezan en 10000 y se incrementa de a 10
