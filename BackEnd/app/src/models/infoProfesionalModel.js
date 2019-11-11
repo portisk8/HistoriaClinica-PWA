@@ -1,3 +1,0 @@
-module.exports = infoProfesinal = {
-    items: [{Especialidad: "Urologo", Matricula: "08255102630ATL", Nombre: "Cristian", Apellido: "Gonzalez", DNI: "34734612", Dias: "Lunes, Miercoles, Viernes", Horario: "8:00 - 12:30", Consultorio: "1"}, {Especialidad: "Urologo", Matricula: "102630FT", Nombre: "Leonel", Apellido: "Shinguer", DNI: "3679425", Dias: "Lunes, Martes, Miercoles, Viernes", Horario: "16:30 - 21:30", Consultorio: "2"}, {Especialidad: "Urologo", Matricula: "45796423647TPP", Nombre: "Ana Luisa", Apellido: "Stach", DNI: "134887988", Dias: "Lunes, Martes, Miercoles, Jueves, Viernes", Horario: "8:00 - 13:00", Consultorio: "3"}]
-};
