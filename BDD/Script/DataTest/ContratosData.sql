@@ -1,0 +1,10 @@
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (1,"2019-01-01 10:00:00","2019-10-11 10:00:00","Anticonceptivos","Arcu Vestibulum Ante Ltd");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (2,"2019-01-04 11:00:00","2019-10-18 11:00:00","Calmantes","Aenean Eget Corporation");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (3,"2019-01-30 11:00:00","2019-11-27 11:00:00","Aspirinetas","Mauris Industries");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (4,"2019-01-24 11:00:00","2019-10-17 11:00:00","Sedantes","Vulputate Nisi Sem Limited");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (5,"2019-01-03 11:00:00","2019-09-25 11:00:00","Fármacos en Fase Experimental","In Ornare Company");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (6,"2019-01-06 11:00:00","2019-09-24 11:00:00","Antialérgicos","Risus Quisque Libero Inc.");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (7,"2019-01-30 11:00:00","2019-10-25 11:00:00","Analgésicos","Feugiat Metus Sit Limited");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (8,"2019-01-20 11:00:00","2019-12-19 11:00:00","Antiácidos","Tristique Aliquet Phasellus Institute");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (9,"2019-01-17 11:00:00","2019-12-09 11:00:00","Antipiréticos","Risus Quisque Libero Inc.");
+INSERT INTO Contratos (contratoId,fechaInicio,fechaFin,especificaciones,drogueria) VALUES (10,"2019-01-22 12:00:00","2019-08-02 12:00:00","Antiinfecciosos","Mauris Industries");
