@@ -7,16 +7,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // import routes
 const especialidadesRouter = require("./app/src/routes/especialidadesRouter");
-const infoProfesionalRouter = require("./app/src/routes/profesionalesRouter");
+const profesionalRouter = require("./app/src/routes/profesionalesRouter");
 const loginRouter = require("./app/src/routes/loginRouter");
 const turnosRouter = require("./app/src/routes/turnosRouter");
 const userRouter = require("./app/src/routes/userRouter");
+const drugRouter = require("./app/src/routes/drugRouter");
 
 app.use("/api", especialidadesRouter);
-app.use("/api", infoProfesionalRouter);
+app.use("/api", profesionalRouter);
 app.use("/api", loginRouter);
 app.use("/api", turnosRouter);
 app.use("/api", userRouter);
+app.use("/api", drugRouter);
 
 //config ports
 var port = Number(process.env.PORT || 3001);
