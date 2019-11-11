@@ -1,8 +1,9 @@
 module.exports = {
-    ProfesionalesModel: function(descripcion, nroMatricula) {
+    ProfesionalesModel: function(apellido,nombre, numeroMatricula) {
       return profesionalesModel = {
-        descripcion: descripcion,
-        nroMatricula: nroMatricula
+        apellido: apellido,
+        nombre: nombre,
+        numeroMatricula: numeroMatricula
       }
     }
   };
