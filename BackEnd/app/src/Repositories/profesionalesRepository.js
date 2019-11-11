@@ -1,12 +1,12 @@
 //include the model (aka DB connection)
 var db = require("./dbConnection");
-const profesionales = "CALL Profesionales";
+const profesionales = "CALL Profesionales_obtener";
 //create class
-var ProfesionalesRepository = {
+var profesionalesRepository = {
   //function to query all items
-  profesionales: (descripcion, nroMatricula) => {
+  obtenerPorEspecialidad: (descripcion) => {
     return new Promise((resolve, reject) => {
-      db.query(`${profesionales}(${descripcion})(${nroMatricula}) `, (err, res) => {
+      db.query(`${profesionales}('${descripcion}');`, (err, res) => {
         if (err) {
           reject(err);
         } else {
