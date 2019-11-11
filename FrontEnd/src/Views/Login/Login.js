@@ -56,7 +56,7 @@ class Login extends React.Component{
     render(){
         //if the state.redirect equlas true, then redirect to dashboard component
          if(this.state.redirect){
-            return(<Redirect to={'/ReservarTurnos'} />);      
+            return(<Redirect to={'/MenuUsuario'} />);      
          }
          //if the user is stored in the local storage then redirect dashboard component
        /*  if(sessionStorage.getItem("userData")){
