@@ -10,7 +10,7 @@ class PedirMedicamentos extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-           // dorgas: [],
+            dorgas: [],
           //  isLoaded: false,
             user: sessionStorage.getItem("userData")
         }
@@ -19,21 +19,25 @@ class PedirMedicamentos extends React.Component {
     
     componentDidMount(){
         console.log(JSON.parse(this.state.user).dni)
-       // this.DrogasList();
+        this.DrogasList(JSON.parse(this.state.user).dni);
  
      }//END componentDidMount()-----------------------------------------------------------------------------------------------------------
  
  
-   /* DrogasList(){    
-        getDrogas(this.state.user).then((result) => {  
-        result.map((item) =>
+    DrogasList(dniNro){
+        let droga = {
+            dni: dniNro
+        }    
+        getDrogas(droga).then((result) => { 
+            console.log(result) 
+       /* result.map((item) =>
             this.state.drogas.push(item)
         );
-        this.setState({isLoaded: true})     
+        this.setState({isLoaded: true}) */    
         });
         
     }//END ProviderList()-----------------------------------------------------------------------------------------------------------
-*/
+
     
 
     render(){

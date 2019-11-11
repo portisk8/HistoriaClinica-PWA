@@ -6,7 +6,7 @@ const __APIURL = API_URL;
 export function getDrogas(dni) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`http://localhost:3001/api/login`, {
+  return axiosRequest(`http://localhost:3001/api/drogas`, {
     method: "POST",
     body: JSON.stringify(dni),
     headers: {

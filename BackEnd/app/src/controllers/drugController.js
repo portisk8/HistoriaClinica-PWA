@@ -5,7 +5,12 @@ const drugModel = require('../models/drugModel');
 module.exports = {
     drug: function (req,res) {
         let drug = drugModel.DrugModel();
-        res.send(drug)
+        if(drug.cantidad == req.body.dni){
+            res.send(drug)
+        }else{
+            res.send("no")
+        }
+        
       /*  loginRepository.login(login.dni).then(user => {
             
           bcrypt.compare(login.password, user[0][0].pass, function(err, result){
