@@ -1,14 +1,14 @@
 //include the model (aka DB connection)
 var db = require("./dbConnection");
 
-const drogasNoEntregadas = "CALL DrogasNoEntregadas";
+const createPatient = "CALL Create_Patient";
 
 //create class
-var Drogas = {
+var Patient = {
     //function to query all items
-    GetDrogas: (dni) => {
+    CreatePatient: (patient) => {
       return new Promise((resolve, reject) => {
-        db.query(`${drogasNoEntregadas}(${dni})`, (err, res) => {
+        db.query(`${createPatient}(${patient.dni},'${patient.nombre}','${patient.apellido}')`, (err, res) => {
           if (err) {
             reject(err);
           } else {
@@ -18,4 +18,4 @@ var Drogas = {
       });
     }
   };
-  module.exports = Drogas;
+  module.exports = Patient;
