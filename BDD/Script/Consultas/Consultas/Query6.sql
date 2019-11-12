@@ -1,3 +1,4 @@
+-- Listar las drogas cuyos proveedores tienen contratos que vences antes de fin de año.
 select distinct d.nombreComercial 
 from Drogas d, Droguerias dro, Contratos c
 where d.drogueria = dro.nombre and dro.nombre = c.drogueria and 

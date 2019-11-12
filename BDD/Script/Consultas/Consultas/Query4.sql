@@ -1,3 +1,5 @@
+-- Listar las drogas que están por debajo de su stock mínimo.
+
 Select d.nombreComercial
 From Drogas d	, (
                     

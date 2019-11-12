@@ -1,3 +1,4 @@
+-- Listar los exámenes de laboratorios que aún no tienen resultados.
 select  p.apellido as apellidoPaciente,
 		p.nombre as nombrePaciente,
         pro.apellido as profesionalApellido,

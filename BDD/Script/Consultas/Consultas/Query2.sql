@@ -1,3 +1,4 @@
+-- ¿Cuál es el diagnóstico que más se dio durante 2018?
 select m.descripcion ,max(m.cantidadDeDiagnosticos) as cantidad
 from (
         
