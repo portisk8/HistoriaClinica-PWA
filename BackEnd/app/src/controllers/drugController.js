@@ -1,28 +1,17 @@
-const drugModel = require('../models/drugModel');
-//const loginRepository = require('../repositories/loginRepository');
+//const drugModel = require('../models/drugModel');
+const drugRepository = require('../repositories/drugRepository');
 
 
 module.exports = {
     drug: function (req,res) {
-        let drug = drugModel.DrugModel();
-        if(drug.cantidad == req.body.dni){
-            res.send(drug)
-        }else{
-            res.send("no")
-        }
-        
-      /*  loginRepository.login(login.dni).then(user => {
-            
-          bcrypt.compare(login.password, user[0][0].pass, function(err, result){
-                if (err) throw err
-                if (result) {
-                    let token = jwt.sign({ dni: login.dni }, 'keyboard', { expiresIn: 129600 }); // Sigining the token                    res.send("ok");
-                    let params = {dni: login.dni, token: token}
-                    res.send(params)
-                } else {
-                    return res.status(401).json({ msg: "Invalid credencial" })
-                }
-           })
-        })*/
+        let dni = req.params.dni;
+        return drugRepository
+        .GetDrogas(dni)
+        .then(data => {
+          res.send(data);
+        })
+        .catch(error => {
+          res.send(error);
+        }); 
     }
 }

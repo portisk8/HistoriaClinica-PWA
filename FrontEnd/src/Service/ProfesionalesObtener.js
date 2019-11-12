@@ -3,10 +3,10 @@ import { API_URL } from "../Common/environment";
 
 const __APIURL = API_URL;
 
-export function mostrarDrogas(dni) {
+export function getProfesionalesObtener(especialidad) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  console.log("call api login");
-  return axiosRequest(`http://localhost:3001/api/drogas/${dni}`, {
+  console.log("call api profesionales");
+  return axiosRequest(`${__APIURL}/api/profesionales/${especialidad}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -14,4 +14,3 @@ export function mostrarDrogas(dni) {
     }
   }).then(response => response.data);
 }
-
