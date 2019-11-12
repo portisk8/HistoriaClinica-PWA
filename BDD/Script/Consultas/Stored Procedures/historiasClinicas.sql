@@ -1,13 +1,16 @@
 DELIMITER $$
  
 CREATE PROCEDURE HistorialClinico (
-    
+        IN  nroHistoriaClinica int
+
 )
 BEGIN
     START TRANSACTION;
 		SELECT *
-			from AtencionMedica;
+		from turnos t 
+        WHERE t.paciente = nroHistoriaClinica;
 	COMMIT;
 END$$
- 
-DELIMITER ;
+
+ineryoinn
+turnos, analisis, emergencias y atencion medica

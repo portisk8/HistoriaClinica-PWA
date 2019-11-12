@@ -36,7 +36,7 @@ class HistorialTurnos extends React.Component {
                     {this.state.historialTurnosList.length > 0 && this.state.historialTurnosList.map((item) => (
                         <div>
                         
-                            {item.}
+                            hola
                         
                         </div>
                     ))}
