@@ -1,12 +1,12 @@
 //include the model (aka DB connection)
 var db = require("./dbConnection");
-const profesionales = "CALL historiasClinicas()";
+const historiaClinica = "CALL historiasClinicas()";
 //create class
 var historiaClinica = {
   //function to query all items
   obtenerHistoriaClinica: () => {
     return new Promise((resolve, reject) => {
-      db.query(`${historiaClinica};`, (err, res) => {
+      db.query(`${historiaClinica}('${2}');`, (err, res) => {
         if (err) {
           reject(err);
         } else {
