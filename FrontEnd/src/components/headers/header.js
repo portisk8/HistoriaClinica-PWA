@@ -46,6 +46,10 @@ class Header extends React.Component{
               <li>
                 <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Home</p></Link>
               </li>
+              <li>
+                <Link to="/DetallesAtencionMedica"><p style={{color: "black"}}  onClick={this.logout}>PruebaDetalleAtencionMedNoBorrar</p></Link>
+              </li>
+
             </ul>
           </div>
         </nav>

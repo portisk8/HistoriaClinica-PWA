@@ -11,9 +11,41 @@ class DetallesAtencionMedica extends React.Component {
                 <Header></Header>
                     <h1>
                         Detalles de Atenciones Médicas
+
+                        
+                            <ul className="navbar-nav mr-auto">
+                                
+                                
+
+                               <h4> <li className="nav-item">
+                                    Fecha atencion:
+                                </li>
+                                </h4>
+                                <h4><li className="nav-item">
+                                    Duracion:
+                                </li></h4>
+                                <h4><li className="nav-item">
+                                    Hora atencion:
+                                </li></h4>
+                                <h4><li className="nav-item">
+                                    Diagnostico:
+                                </li></h4>
+                                <h4><li className="nav-item">
+                                    ID atencion medica:
+                                </li></h4>
+                                <h4><li className="nav-item">
+                                    Motivo de atencion:
+                                </li></h4>
+                                <h4><li className="nav-item">
+                                    Medico:
+                                </li></h4>
+
+                               
+                            </ul>
+                        
                     </h1>
-                <Footer></Footer>
-            </div>
+                                    <Footer></Footer>
+                                </div>
 
 
 
