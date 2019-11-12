@@ -1,15 +1,12 @@
 //include the model (aka DB connection)
 var db = require("./dbConnection");
-
-//QUERYS
-
-const historialTurnosBuscar = "SELECT * FROM Turnos";
+const historiaClinica = "CALL historiasClinicas()";
 //create class
-var HistorialTurnos = {
+var historiaClinica = {
   //function to query all items
-  getTurnosList: () => {
+  obtenerHistoriaClinica: () => {
     return new Promise((resolve, reject) => {
-      db.query(historialTurnosBuscar, (err, res) => {
+      db.query(`${historiaClinica}('${2}');`, (err, res) => {
         if (err) {
           reject(err);
         } else {
@@ -19,4 +16,5 @@ var HistorialTurnos = {
     });
   }
 };
-module.exports = HistorialTurnos;
+module.exports = historiaClinica;
+

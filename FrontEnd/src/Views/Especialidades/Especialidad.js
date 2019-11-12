@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/headers/header";
-import Footer from "../../components/footer/footer";
+import Footer from "../../components/footer/footer"; 
 import { getEspecialidades } from "../../Service/Especialidades";
 
 class Especialidad extends React.Component {

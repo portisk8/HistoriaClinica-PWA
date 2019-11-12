@@ -3,6 +3,6 @@ var api = express.Router()
 
 const profesionalController = require('../controllers/profesionalesController');
 
-api.post('/profesionalPorEspecialidad',profesionalController.obtenerPorEspecialidad);
+api.get('/profesionales/:especialidad',profesionalController.obtenerPorEspecialidad);
 
 module.exports = api;

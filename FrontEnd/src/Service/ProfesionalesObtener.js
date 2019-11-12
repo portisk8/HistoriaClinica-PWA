@@ -3,10 +3,10 @@ import { API_URL } from "../Common/environment";
 
 const __APIURL = API_URL;
 
-export function getHistorialTurnos() {
+export function getProfesionalesObtener(especialidad) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  console.log("call api historialTurnos");
-  return axiosRequest(`${__APIURL}/api/historialTurnos`, {
+  console.log("call api profesionales");
+  return axiosRequest(`${__APIURL}/api/profesionales/${especialidad}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
