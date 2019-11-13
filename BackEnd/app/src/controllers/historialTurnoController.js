@@ -1,14 +1,15 @@
-const historialTurnos = require("../models/historialTurnosModel");
+const historialTurnosRepository = require('../repositories/historialTurnosRepository');
 
 module.exports = {
   listHistorialTurnos: function(req, res) {
-    historialTurnos
-      .getHistorialTurnosList()
-      .then(data => {
-        res.send(data);
-      })
-      .catch(error => {
-        res.send(error);
-      });
+    let dni = req.params.dni;
+    return historialTurnosRepository
+    .getHistorialTurnosList(dni)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(error => {
+      res.send(error);
+    });
   }
 };

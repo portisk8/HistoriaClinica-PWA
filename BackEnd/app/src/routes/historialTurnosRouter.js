@@ -3,6 +3,6 @@ var api = express.Router()
 
 const historialTurnosController = require('../controllers/historialTurnosController');
 
-api.get('/historialTurnos',historialTurnosController.listTurnos);
+api.get('/historialTurnos/:dni',historialTurnosController.listHistorialTurnos);
 
 module.exports = api;
