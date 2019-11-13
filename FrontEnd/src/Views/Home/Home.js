@@ -12,23 +12,35 @@ import Footer from "../../components/footer/footer";
 import SingIn from "../../Views/SingIn/SingIn";
 import { Link } from 'react-router-dom';
 import Login from "../Login/Login";
+import { Redirect } from 'react-router-dom';
+
 
 class Home extends React.Component {
- /* routeChangeLogin =()=>{
-    let path = `login`;
-    this.props.history.push(path);
-  }
-  routeChangeEspecialidades =()=>{
-    let path = `Especialidades`;
-    this.props.history.push(path);
-  }*/
- 
-  render() {
+  constructor(props){
+    super(props);
+    this.state = {
+      isLogin: false
+    }
+    this.historialClinico = this.historialClinico.bind(this);
 
+  }
+
+  historialClinico(){
+    if(sessionStorage.getItem("userData")){
+      this.setState({isLogin: true})
+  }else{
+    alert("Primero debe iniciar session")
+  }
+}
+  render() {
+    if(this.state.isLogin){
+      return <Redirect to={"/HistorialClinico"}/>
+    }else{
     return (
       <div>
         <Header></Header>
-        <h1>Home</h1>
+                
+        <h1 style={{textAlign: "center"}}>Hospital Salutem</h1>
         
         <div>
           <Link from="/" to="/Especialidades">
@@ -56,11 +68,11 @@ class Home extends React.Component {
         </div>
 
         <div>
-          <Link from="/" to="/HistorialClinico">
-            <button type="button" class="btn btn-outline-secondary btn-lg btn-block">
+      
+            <button onClick={this.historialClinico} type="button" class="btn btn-outline-secondary btn-lg btn-block">
               HistorialClinico
             </button>
-          </Link>
+          
         </div>
 
         <div id="carouselExampleIndicators" className="carousel slide" data-interval="2000" data-ride="carousel">
@@ -105,6 +117,7 @@ class Home extends React.Component {
       </div>
     
     );
+  }
   }
 }
 

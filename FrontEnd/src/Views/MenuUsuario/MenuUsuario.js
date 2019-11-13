@@ -11,8 +11,8 @@ class MenuUsuario extends React.Component {
             <div>
                 <Header></Header>
                 
-                <h1>
-                    User Menu
+                <h1 style={{textAlign: "center"}}>
+                    Mi Perfil
                 </h1>
                 <h3>
                     Turnos
