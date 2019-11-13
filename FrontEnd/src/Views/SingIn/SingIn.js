@@ -6,6 +6,7 @@ import Footer from "../../components/footer/footer";
 import { Link } from 'react-router-dom';
 import { createUser, createPatient } from "../../Service/Register";
 import { postLogin } from "../../Service/PostLogin";
+import {Redirect} from 'react-router-dom';
 
 
 
@@ -91,82 +92,87 @@ class SingIn extends React.Component {
 
 
   render() {
-    return (
-      <div>
-        <Header></Header>
-        <h1>Registrar Nueva Cuenta</h1>
-        <form onSubmit={this.handleSubmit}>
-
-        <div class="form-group">
-        <label for="exampleFormControlInput1">Numero DNI</label>
-        <input onChange={this.onChange} name="dni" class="form-control" type="text" placeholder="Ingresa tu DNI"></input>
-        </div>
+    if(this.state.redirect){
+      return (<Redirect to={"/MenuUsuario"}/>)
+    }else{
+      return (
+        <div>
+          <Header></Header>
+          <h1>Registrar Nueva Cuenta</h1>
+          <form onSubmit={this.handleSubmit}>
+  
+          <div class="form-group">
+          <label for="exampleFormControlInput1">Numero DNI</label>
+          <input onChange={this.onChange} name="dni" class="form-control" type="text" placeholder="Ingresa tu DNI"></input>
+          </div>
+            
+            <div class="form-group">
+  
+            <label for="exampleFormControlInput1">Nombre</label>
+            <input onChange={this.onChange} name="nombre" class="form-control" type="text" placeholder="Ingresar nombre"></input>
+  
+            </div>
+            <div class="form-group">
+  
+            <label for="exampleFormControlInput1">Apellido</label>
+            <input onChange={this.onChange} name="apellido" class="form-control" type="text" placeholder="Ingresar apellido"></input>
+  
+            </div>
+  
+            <div class="form-group">
+  
+            <label for="exampleFormControlInput1">Contraseña</label>
+            <input onChange={this.onChange} name="password" class="form-control" type="password" placeholder="Ingresar contraseña"></input>
+  
+            </div>
+           
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Sexo</label>
+              <select name="sexo" onChange={this.onChange} class="form-control" id="exampleFormControlSelect1">
+                <option>Masculino</option>
+                <option>Femenino</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Provincia</label>
+            <input onChange={this.onChange} name="provincia" class="form-control" type="text" placeholder="Ingresar Provincia"></input>
+            </div>
+  
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Departamento</label>
+            <input onChange={this.onChange} name="departamento" class="form-control" type="text" placeholder="Ingresar Departamento"></input>
+            </div>
+  
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Localidad</label>
+            <input onChange={this.onChange} name="localidad" class="form-control" type="text" placeholder="Ingresar Localidad"></input>
+            </div>
+  
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Calle</label>
+            <input onChange={this.onChange} name="calle" class="form-control" type="text" placeholder="Ingresar Calle"></input>
+            </div>
+  
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Numero</label>
+            <input onChange={this.onChange} name="numero" class="form-control" type="text" placeholder="Ingresar Numero De Calle"></input>
+            </div>
+  
+          </form> 
           
           <div class="form-group">
-
-          <label for="exampleFormControlInput1">Nombre</label>
-          <input onChange={this.onChange} name="nombre" class="form-control" type="text" placeholder="Ingresar nombre"></input>
-
+            <input type="submit" onClick={this.registerUser} class="btnSubmit" value="Registrarse" />
           </div>
-          <div class="form-group">
-
-          <label for="exampleFormControlInput1">Apellido</label>
-          <input onChange={this.onChange} name="apellido" class="form-control" type="text" placeholder="Ingresar apellido"></input>
-
-          </div>
-
-          <div class="form-group">
-
-          <label for="exampleFormControlInput1">Contraseña</label>
-          <input onChange={this.onChange} name="password" class="form-control" type="password" placeholder="Ingresar contraseña"></input>
-
-          </div>
-         
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Sexo</label>
-            <select name="sexo" onChange={this.onChange} class="form-control" id="exampleFormControlSelect1">
-              <option>Masculino</option>
-              <option>Femenino</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-          <label for="exampleFormControlInput1">Provincia</label>
-          <input onChange={this.onChange} name="provincia" class="form-control" type="text" placeholder="Ingresar Provincia"></input>
-          </div>
-
-          <div class="form-group">
-          <label for="exampleFormControlInput1">Departamento</label>
-          <input onChange={this.onChange} name="departamento" class="form-control" type="text" placeholder="Ingresar Departamento"></input>
-          </div>
-
-          <div class="form-group">
-          <label for="exampleFormControlInput1">Localidad</label>
-          <input onChange={this.onChange} name="localidad" class="form-control" type="text" placeholder="Ingresar Localidad"></input>
-          </div>
-
-          <div class="form-group">
-          <label for="exampleFormControlInput1">Calle</label>
-          <input onChange={this.onChange} name="calle" class="form-control" type="text" placeholder="Ingresar Calle"></input>
-          </div>
-
-          <div class="form-group">
-          <label for="exampleFormControlInput1">Numero</label>
-          <input onChange={this.onChange} name="numero" class="form-control" type="text" placeholder="Ingresar Numero De Calle"></input>
-          </div>
-
-        </form> 
-        
-        <div class="form-group">
-          <input type="submit" onClick={this.registerUser} class="btnSubmit" value="Registrarse" />
+          
+          <Footer></Footer>
         </div>
         
-        <Footer></Footer>
-      </div>
+  
       
-
-    
-    );
+      );
+    }
+   
   }
 }
 
