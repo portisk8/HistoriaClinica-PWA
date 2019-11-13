@@ -72,7 +72,7 @@ class Login extends React.Component{
                         <h3>Iniciar sesión</h3>
                         <form onSubmit={this.handleSubmit}>
                             <div class="form-group">
-                                <input  type="text" name="dni" onChange={this.onChange} class="form-control" placeholder="Tu Email"  />
+                                <input  type="text" name="dni" onChange={this.onChange} class="form-control" placeholder="Tu Dni"  />
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" onChange={this.onChange} class="form-control" placeholder="Tu Contraseña"  />
