@@ -17,6 +17,8 @@ const historialClinicoRouter = require("./app/src/routes/historiasClinicasRouter
 
 const drugsRouter = require("./app/src/routes/requestDrugsRoutes");
 const estadoPrescripcionesRouter = require("./app/src/routes/estadoPrescripcionesRouter");
+const historialDrogaRouter = require("./app/src/routes/historialDrogaRouter");
+
 
 app.use("/api", especialidadesRouter);
 app.use("/api", profesionalRouter);
@@ -29,6 +31,8 @@ app.use("/api", historialClinicoRouter);
 
 app.use("/api", drugsRouter);
 app.use("/api", estadoPrescripcionesRouter);
+app.use("/api", historialDrogaRouter);
+
 
 //config ports
 var port = Number(process.env.PORT || 3001);

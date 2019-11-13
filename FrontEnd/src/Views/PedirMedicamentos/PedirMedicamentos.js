@@ -3,7 +3,7 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
-import { mostrarDrogas, requestDrugs } from "../../Service/Drogas";
+import { mostrarDrogas, requestDrugs, cambiarEstadoPrescripciones } from "../../Service/Drogas";
 
 class PedirMedicamentos extends React.Component {
 
@@ -12,6 +12,7 @@ class PedirMedicamentos extends React.Component {
         this.state = {
             drogas: [],
             askDrug: [],
+            changeStatePresc: [],
           //  isLoaded: false,
             user: sessionStorage.getItem("userData")
         }
@@ -36,8 +37,10 @@ class PedirMedicamentos extends React.Component {
             result[0].map((item) =>
                 this.state.askDrug.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
             );
-
-            
+            result[0].map((item) =>
+                this.state.changeStatePresc.push({dni: JSON.parse(this.state.user).dni, droga: item.droga, drogueria: item.drogueria})
+            );
+         
             this.setState({isLoaded: true}) 
             
             });
@@ -48,6 +51,12 @@ class PedirMedicamentos extends React.Component {
         console.log(this.state.askDrug)
         this.state.askDrug.forEach(element => {
             requestDrugs(element).then(result => {
+                console.log(result);
+            }) 
+        });
+
+        this.state.changeStatePresc.forEach(element => {
+            cambiarEstadoPrescripciones(element).then(result => {
                 console.log(result);
             }) 
         });
@@ -62,7 +71,7 @@ class PedirMedicamentos extends React.Component {
             <div>          
                 <Header></Header>
                 <div> <div className="col-12">
-                        <h2>Listado De Proveedores</h2>
+                        <h2>Listado De Drogas Por Pedir</h2>
                         <ul >
                             {list.map(listItem => <li id={listItem.droga} name={listItem.droga} className="list-group-item">{listItem.droga} {listItem.cantidad} unidades</li>)}
                         </ul>
@@ -81,7 +90,7 @@ class PedirMedicamentos extends React.Component {
         }else{
             return (<div>
                 <Header></Header>
-                <div>No tienes medicamentos para pedir</div>
+                <div><h1>No tienes medicamentos para pedir</h1></div>
                 </div>
             )
         }
