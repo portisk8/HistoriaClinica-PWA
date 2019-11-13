@@ -2,9 +2,8 @@ const historialTurnosRepository = require('../repositories/historialTurnosReposi
 
 module.exports = {
   listHistorialTurnos: function(req, res) {
-    let dni = req.params.dni;
-    return historialTurnosRepository
-    .getHistorialTurnosList(dni)
+    //let dni = req.params.dni;
+    return historialTurnosRepository.getHistorialTurnosList(req.params.dni)
     .then(data => {
       res.send(data);
     })

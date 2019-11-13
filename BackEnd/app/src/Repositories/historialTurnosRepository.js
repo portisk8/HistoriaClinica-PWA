@@ -1,9 +1,9 @@
 var db = require("./dbConnection");
 
-const historialTurnos = "CALL HistorialTurnos";
+const historialTurnos = "call HistorialTurnos";
 
 var HistorialTurnos = {
-    GetDrogas: (dni) => {
+    getHistorialTurnosList: (dni) => {
         return new Promise((resolve, reject) => {
             db.query(`${historialTurnos}(${dni})`, (err, res) => {
                 if (err) {
