@@ -15,7 +15,7 @@ class HistorialMedicamentos extends React.Component {
             user: sessionStorage.getItem("userData")
         }
 
-        this.requestDrug = this.requestDrug.bind(this);
+        this.historialList = this.historialList.bind(this);
     }
 
     
@@ -30,7 +30,7 @@ class HistorialMedicamentos extends React.Component {
            
         historialDrogas(dniNro).then((result) => { 
             result[0].map((item) =>
-            console.log(item)
+            this.state.drogas.push({droga: item.droga, profesional: item.nombre, fecha: item.fechaAtencion})
                // this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})
             );
 
@@ -49,8 +49,8 @@ class HistorialMedicamentos extends React.Component {
                 <Header></Header>
                 <div> <div className="col-12">
                         <h2>Historial de Medicamentos</h2>
-                        <ul >
-                            {list.map(listItem => <li id={listItem.droga} name={listItem.droga} className="list-group-item">{listItem.droga} {listItem.cantidad} unidades</li>)}
+                        <ul className="list-group">
+                            {list.map(listItem => <li id={listItem.droga} name={listItem.droga} className="list-group-item">Droga: {listItem.droga}, Profesional: {listItem.profesional}, Fecha: {listItem.fecha} unidades</li>)}
                         </ul>
                     </div>
                  

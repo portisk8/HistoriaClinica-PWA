@@ -47,7 +47,7 @@ export function cambiarEstadoPrescripciones(dataPresc){
 export function historialDrogas(dni) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`http://localhost:3001/api/drogas/${dni}`, {
+  return axiosRequest(`http://localhost:3001/api/historialDrogas/${dni}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
