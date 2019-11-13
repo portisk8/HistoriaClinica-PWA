@@ -1,14 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Header extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = { message: "is header"};
-        this.logout = this.logout.bind(this);     
+        this.state = { 
+          isLogin: false,
+          toLogin: false
+        };
+        this.logout = this.logout.bind(this);
+        this.historialClinico = this.historialClinico.bind(this);     
     }//END constructor()------------------------------------------------------------------------------------------------------------
 
+    historialClinico(){
+      if(sessionStorage.getItem("userData")){
+        this.setState({isLogin: true})
+    }else{
+      this.setState({toLogin: true})
+    }
+  }
     
     logout() {
       //document.getElementById("btnProv").style.display = "none";
@@ -17,8 +28,13 @@ class Header extends React.Component{
       //remove all data of session storage
       sessionStorage.clear();
     }//END logout()------------------------------------------------------------------------------------------------------------
-
+    
     render(){
+        if(this.state.isLogin){
+          return <Redirect  to="/HistorialClinico"/>
+        }else if(this.state.toLogin){
+          return <Redirect  to="/Login"/>
+        }else{
         return(
         <nav className="navbar navbar-dark navbar-2 bg-info mb-4">
          <p>HOSPITAL PWA</p>
@@ -26,34 +42,34 @@ class Header extends React.Component{
           <div className="navbar-collapse collapse" id="navbarSupportedContent14" >
             <ul className="navbar-nav mr-auto">
               
-            
-
-              <li className="nav-item">
-                <Link from="/" to="/Login"><p style={{color: "black"}}  onClick={this.logout}>Iniciar sesión</p></Link>
+              <li>
+                <Link to="/home"><p style={{color: "black"}}>Home</p></Link>
               </li>
 
               <li className="nav-item">
-                <Link from="/" to="/HistorialClinico"><p style={{color: "black"}}  onClick={this.logout}>Historial Clinico</p></Link>
+                <p style={{color: "black"}}  onClick={this.historialClinico}>Historial Clinico</p>
+              </li>
+              
+              <li className="nav-item">
+                <Link from="/" to="/Login"><p style={{color: "black"}}  >Iniciar sesión</p></Link>
               </li>
 
               <li className="nav-item">
-                <Link from="/" to="/SingIn"><p style={{color: "black"}}  onClick={this.logout}>Registrar nueva cuenta</p></Link>
+                <Link from="/" to="/SingIn"><p style={{color: "black"}} >Registrar nueva cuenta</p></Link>
               </li>
-
+              
               <li className="nav-item">
                 <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Salir</p></Link>
               </li>
               <li>
-                <Link to="/home"><p style={{color: "black"}}  onClick={this.logout}>Home</p></Link>
-              </li>
-              <li>
-                <Link to="/DetallesAtencionMedica"><p style={{color: "black"}}  onClick={this.logout}>PruebaDetalleAtencionMedNoBorrar</p></Link>
+                <Link to="/DetallesAtencionMedica"><p style={{color: "black"}}  >PruebaDetalleAtencionMedNoBorrar</p></Link>
               </li>
 
             </ul>
           </div>
         </nav>
         )
+      }
     }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './login.css';
 import Header from "../../components/headers/header";
 import { postLogin } from "../../Service/PostLogin";
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 class Login extends React.Component{
     constructor(props){
@@ -81,7 +81,7 @@ class Login extends React.Component{
                                 <input type="submit" onClick={this.login} class="btnSubmit" value="Ingresar" />
                             </div>
                             <div class="form-group">
-                                <a href="#" class="ForgetPwd">¿Olvidaste tu contraseña?</a>
+                                <Link from="/Login" to="/SingIn">No estas Registrado?</Link>
                             </div>
                         </form>
                     </div>
