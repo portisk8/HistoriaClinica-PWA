@@ -17,10 +17,10 @@ export function createUser(userData) {
 }
 
 
-export function createPacient(userData) {
+export function createPatient(userData) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`http://localhost:3001/api/registerPacient`, {
+  return axiosRequest(`http://localhost:3001/api/registerPatient`, {
     method: "POST",
     body: JSON.stringify(userData),
     headers: {

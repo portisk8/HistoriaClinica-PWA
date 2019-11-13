@@ -4,7 +4,7 @@ import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 import { Link } from 'react-router-dom';
-import { createUser } from "../../Service/Register";
+import { createUser, createPatient } from "../../Service/Register";
 import { postLogin } from "../../Service/PostLogin";
 
 
@@ -17,12 +17,6 @@ class SingIn extends React.Component {
         nombre: '',
         apellido: '',
         password: '',
-        sexo: 'Masculino',
-        provincia: '',
-        departamento: '',
-        localidad: '',
-        calle: '',
-        numero: '',
         redirect: false
     }
     this.registerUser = this.registerUser.bind(this);
@@ -49,13 +43,44 @@ class SingIn extends React.Component {
       password: this.state.password
     }
 
-    createUser(userData).then(result => {
-      let userLogin ={
-        dni: userData.dni,
-        password: userData.password
-      }
-      //postLogin(userLogin)
-    });
+    let patientData = {
+      dni: this.state.dni,
+      nombre: this.state.nombre,
+      apellido: this.state.apellido
+    }
+
+    if(this.state.dni && this.state.nombre && this.state.apellido){
+      createPatient(patientData).then(result => {
+        console.log(result)
+      })
+    }else{
+      alert("Faltan Rellenar Datos")
+    }
+    
+    if(this.state.dni && this.state.nombre && this.state.password){
+      createUser(userData).then(result => {
+        console.log(result)
+        let userLogin ={
+          dni: userData.dni,
+          password: userData.password
+        }
+        postLogin(userLogin).then(result => {
+          let responseJSON = result;
+          console.log(responseJSON)
+          //if exist token 
+          if(responseJSON.token){
+              //set local storage with the api users response
+              sessionStorage.setItem('userData',JSON.stringify(responseJSON));
+              //redirect equals true, to redirect to the component dashboard
+              this.setState({redirect: true});               
+          }else{//else user or pass invalid
+              alert("Datos incorrectos")
+          }
+      });
+      });
+    }else{
+      alert("Faltan Rellenar Datos")
+    }
   }
 
   onChange(e){

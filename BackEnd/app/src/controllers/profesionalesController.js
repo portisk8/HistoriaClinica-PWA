@@ -1,14 +1,15 @@
-const profesionalesModel = require('../models/profesionalesModel');
 const profesionalesRepository = require('../repositories/profesionalesRepository');
 
 module.exports = {
     obtenerPorEspecialidad: function (req, res) {
         
-        profesionalesRepository.obtenerPorEspecialidad(req.body.descripcion).then(profesional => {
+       return profesionalesRepository.obtenerPorEspecialidad(req.params.especialidad).then(profesional => {
             
-            res.send()
+            res.send(profesional)
             
-        }
-           )
+        }).catch(error => {
+            res.send(error)
+        })
+           
 }
     }

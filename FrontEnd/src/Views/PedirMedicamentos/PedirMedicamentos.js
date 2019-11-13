@@ -3,17 +3,20 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
-import { getDrogas } from "../../Service/Drogas";
+import { mostrarDrogas } from "../../Service/Drogas";
 
 class PedirMedicamentos extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
-            dorgas: [],
+            drogas: [],
+            askDrug: [],
           //  isLoaded: false,
             user: sessionStorage.getItem("userData")
         }
+
+        this.AskDrug = this.AskDrug.bind(this);
     }
 
     
@@ -25,28 +28,41 @@ class PedirMedicamentos extends React.Component {
  
  
     DrogasList(dniNro){
-        let droga = {
-            dni: dniNro
-        }    
-        getDrogas(droga).then((result) => { 
-            console.log(result) 
-       /* result.map((item) =>
-            this.state.drogas.push(item)
-        );
-        this.setState({isLoaded: true}) */    
-        });
-        
-    }//END ProviderList()-----------------------------------------------------------------------------------------------------------
+           
+        mostrarDrogas(dniNro).then((result) => { 
+            result[0].map((item) =>
+                this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})
+            );
+            result[0].map((item) =>
+                this.state.askDrug.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
+            );
 
-    
+            
+            this.setState({isLoaded: true}) 
+            
+            });
+             
+    }//END DrogasList()-----------------------------------------------------------------------------------------------------------
+
+    AskDrug(){
+        console.log(this.state.askDrug)   
+                 
+    }//END DrogasList()-----------------------------------------------------------------------------------------------------------
 
     render(){
+        if(this.state.isLoaded){
+        const list = this.state.drogas;   
         return (
-            <div>
+            <div>          
                 <Header></Header>
-                <div>
-             
-                        <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                <div> <div className="col-12">
+                        <h2>Listado De Proveedores</h2>
+                        <ul >
+                            {list.map(listItem => <li id={listItem.droga} name={listItem.droga} className="list-group-item">{listItem.droga} {listItem.cantidad} unidades</li>)}
+                        </ul>
+                    </div>
+           
+                        <button onClick={this.AskDrug}  type="button" class="btn btn-primary btn-lg btn-block">
                             Pedir Medicamentos
                         </button>
                  
@@ -55,9 +71,14 @@ class PedirMedicamentos extends React.Component {
             </div>
 
 
-
         );
-
+        }else{
+            return (<div>
+                <Header></Header>
+                <div>No tienes medicamentos para pedir</div>
+                </div>
+            )
+        }
     }
 
 }
