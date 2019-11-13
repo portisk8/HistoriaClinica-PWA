@@ -31,8 +31,7 @@ class HistorialTurnos extends React.Component {
            
         getHistorialTurnos(dniNro).then((result) => { 
             result[0].map((item) =>
-            console.log(item)
-               // this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})
+                this.state.historialTurnosList.push(item)
             );
 
             this.setState({isLoaded: true}) 
@@ -53,10 +52,15 @@ class HistorialTurnos extends React.Component {
                                     HISTORIAL TURNOS
                                 </h1>
                                 <ul>
+
                                     {list.map(listItem => 
                                         <li  className="list-group-item">
-
-                                        {listItem.especialidad} {listItem.apellido} {listItem.nombre} 
+                                        
+                                        Especialidad: {listItem.especialidad} <br/> 
+                                        Profesional: {listItem.apellido}, {listItem.nombre} <br/>
+                                        Fecha Asignada: {listItem.diaAsignado}/{listItem.mesAsignado}/{listItem.anioAsignado} <br/>
+                                        Horario Asignado: {listItem.horaAtencion} <br/>
+                                        Estado: {listItem.estado}
                                         </li>
                                     )}
             
