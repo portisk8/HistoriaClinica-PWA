@@ -1,20 +1,32 @@
 //include the model (aka DB connection)
 var db = require("./dbConnection");
-const historiaClinica = "CALL historiasClinicas()";
+const historialClinicoTurno = "CALL historialClinicoTurno";
+const historialClinicoInternacion = "CALL historialClinicoInternacion";
+
 //create class
-var historiaClinica = {
+var profesionalesRepository = {
   //function to query all items
-  obtenerHistoriaClinica: () => {
+  obtenerHistoriaClinica: (dni) => {
+      let hc = []
     return new Promise((resolve, reject) => {
-      db.query(`${historiaClinica}('${2}');`, (err, res) => {
+      db.query(`${historiaClinica}('${dni}');`, (err, res) => {
         if (err) {
           reject(err);
         } else {
-          resolve(res);
+            hc.push(res)
+          resolve(hc);
+        }
+      });
+    
+      db.query(`${historiaClinica}('${dni}');`, (err, res) => {
+        if (err) {
+          reject(err);
+        } else {
+            hc.push(res)
+          resolve(hc);
         }
       });
     });
   }
 };
-module.exports = historiaClinica;
-
+module.exports = profesionalesRepository;
