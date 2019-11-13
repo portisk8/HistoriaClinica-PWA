@@ -1,4 +1,5 @@
 -- Porcentaje total de pacienes atendidos en emergencias que no tienen domicilio en Chaco.
+
 select concat((( SinChaco.TotalPacientesSinChaco * 100)/Total.TotalPacientes ),"%") as PorcentajePacientesSinChaco
 from (	select 	count(*) as TotalPacientes
 		from 	Emergencias eme ,Pacientes pac

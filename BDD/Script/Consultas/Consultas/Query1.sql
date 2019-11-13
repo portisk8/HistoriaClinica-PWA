@@ -1,6 +1,6 @@
 -- Obtener el promedio diario de pacientes que hicieron consultas de cardiología en el último mes.
 
-select avg(count(*))
+select  avg(count(*))
 from	Pacientes pac,
 		Turnos tur,
         Profesionales pro

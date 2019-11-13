@@ -31,20 +31,22 @@ class PedirMedicamentos extends React.Component {
            
         mostrarDrogas(dniNro).then((result) => { 
             result[0].map((item) =>
-            this.state.drogas.push({droga: item.droga, cantidad: item.cantidad}),
-           // this.state.askDrug.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
+                this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})
             );
-            console.log(this.state.drogas)
+            result[0].map((item) =>
+                this.state.askDrug.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
+            );
+
+            
             this.setState({isLoaded: true}) 
             
             });
              
     }//END DrogasList()-----------------------------------------------------------------------------------------------------------
 
-    AksDrug(){
-           
-        
-             
+    AskDrug(){
+        console.log(this.state.askDrug)   
+                 
     }//END DrogasList()-----------------------------------------------------------------------------------------------------------
 
     render(){
@@ -60,7 +62,7 @@ class PedirMedicamentos extends React.Component {
                         </ul>
                     </div>
            
-                        <button onclick={this.AskDrug}  type="button" class="btn btn-primary btn-lg btn-block">
+                        <button onClick={this.AskDrug}  type="button" class="btn btn-primary btn-lg btn-block">
                             Pedir Medicamentos
                         </button>
                  
