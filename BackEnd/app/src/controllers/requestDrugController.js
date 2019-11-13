@@ -3,7 +3,7 @@ const requestDrugModel = require("../models/requestDrugModel");
 
 module.exports = {
   requestDrugs: function(req, res) {
-    let drugs = requestDrugModel.RequestDrugModel(req.body.nameDrug, req.body.drugstore, req.body.count);
+    let drugs = requestDrugModel.RequestDrugModel(req.body.droga, req.body.drogueria, req.body.cantidad);
     return requestDrugRepository
     .RequestDrugs(drugs)
     .then(data => {

@@ -15,3 +15,33 @@ export function mostrarDrogas(dni) {
   }).then(response => response.data);
 }
 
+
+export function requestDrugs(dataDrugs){
+  //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log("call api login");
+  return axiosRequest(`http://localhost:3001/api/requestDrugs`, {
+    method: "POST",
+    body: JSON.stringify(dataDrugs),
+    headers: {
+      "Content-Type": "application/json"
+      // Authorization: "Bearer " + "currentUser.token"
+    }
+  }).then(response => response.data);
+}
+
+export function cambiarEstadoPrescripciones(dni){
+  //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log("call api login");
+  return axiosRequest(`http://localhost:3001/api/prescripciones/${dni}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+      // Authorization: "Bearer " + "currentUser.token"
+    }
+  }).then(response => response.data);
+}
+
+
+
+
+

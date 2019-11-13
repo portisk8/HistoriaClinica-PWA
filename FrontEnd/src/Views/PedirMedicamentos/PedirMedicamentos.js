@@ -3,7 +3,7 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
-import { mostrarDrogas } from "../../Service/Drogas";
+import { mostrarDrogas, requestDrugs } from "../../Service/Drogas";
 
 class PedirMedicamentos extends React.Component {
 
@@ -45,8 +45,14 @@ class PedirMedicamentos extends React.Component {
     }//END DrogasList()-----------------------------------------------------------------------------------------------------------
 
     AskDrug(){
-        console.log(this.state.askDrug)   
-                 
+        console.log(this.state.askDrug)
+        this.state.askDrug.forEach(element => {
+            requestDrugs(element).then(result => {
+                console.log(result);
+            }) 
+        });
+       // requestDrugs(this.state.askDrug)
+       this.setState({isLoaded: false})           
     }//END DrogasList()-----------------------------------------------------------------------------------------------------------
 
     render(){

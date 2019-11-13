@@ -14,6 +14,7 @@ const userRouter = require("./app/src/routes/userRouter");
 const drugRouter = require("./app/src/routes/drugRouter");
 const patientRouter = require("./app/src/routes/patientRouter");
 const drugsRouter = require("./app/src/routes/requestDrugsRoutes");
+const estadoPrescripcionesRouter = require("./app/src/routes/estadoPrescripcionesRouter");
 
 app.use("/api", especialidadesRouter);
 app.use("/api", profesionalRouter);
@@ -23,6 +24,7 @@ app.use("/api", userRouter);
 app.use("/api", drugRouter);
 app.use("/api", patientRouter);
 app.use("/api", drugsRouter);
+app.use("/api", estadoPrescripcionesRouter);
 
 //config ports
 var port = Number(process.env.PORT || 3001);
