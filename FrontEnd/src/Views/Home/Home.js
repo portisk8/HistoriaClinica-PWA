@@ -19,7 +19,8 @@ class Home extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      isLogin: false
+      isLogin: false,
+      toLogin: false
     }
     this.historialClinico = this.historialClinico.bind(this);
 
@@ -29,12 +30,14 @@ class Home extends React.Component {
     if(sessionStorage.getItem("userData")){
       this.setState({isLogin: true})
   }else{
-    alert("Primero debe iniciar session")
+    this.setState({toLogin: true})
   }
 }
   render() {
     if(this.state.isLogin){
       return <Redirect to={"/HistorialClinico"}/>
+    }else if(this.state.toLogin){
+      return <Redirect to={"/Login"}/>
     }else{
     return (
       <div>
@@ -63,7 +66,7 @@ class Home extends React.Component {
           <Link from="/" to="/TurnosDisponibles">
             <button  type="button" class="btn btn-info btn-lg btn-block">
               Turnos Diponibles
-               </button>
+            </button>
           </Link>
         </div>
 
@@ -105,12 +108,6 @@ class Home extends React.Component {
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
-
-
-
 
         
         <Footer></Footer>
