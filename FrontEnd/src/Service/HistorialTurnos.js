@@ -6,7 +6,7 @@ const __APIURL = API_URL;
 export function getHistorialTurnos(dni) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   //console.log("call api historialTurnos");
-  return axiosRequest(`http://localhost:3001/api/historialTurnos/${dni}`, {
+  return axiosRequest(`${__APIURL}/api/historial/turno/${dni}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
