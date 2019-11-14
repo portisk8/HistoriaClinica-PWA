@@ -1,8 +1,8 @@
-const especialidades = require("../models/especialidadesModel");
+const especialidadRepository = require("../repositories/especialidadRepository");
 
 module.exports = {
   listEspecialidades: function(req, res) {
-    especialidades
+    especialidadRepository
       .getEspecialidadesList()
       .then(data => {
         res.send(data);

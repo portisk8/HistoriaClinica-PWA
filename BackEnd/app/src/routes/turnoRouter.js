@@ -3,6 +3,6 @@ var api = express.Router();
 
 const turnoController = require("../controllers/turnoController");
 
-api.get("/turno", turnoController.listTurno);
+api.post("/turno", turnoController.turnoGuardar);
 
 module.exports = api;

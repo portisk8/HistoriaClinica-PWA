@@ -3,13 +3,14 @@ var db = require("./dbConnection");
 
 //QUERYS
 const queryTurnoGuardar = "CALL Turno_Guardar";
+const historialListBuscar = "SELECT * FROM Turnos";
 
 //create class
 var Turnos = {
   //function to query all items
-  turnoGuardar: turno => {
+  guardar: turno => {
     return new Promise((resolve, reject) => {
-      var query = db.query(
+      db.query(
         `${queryTurnoGuardar}('${turno.fecha}','${turno.motivo}',${turno.paciente},${turno.medico})`,
         (err, res) => {
           if (err) {
@@ -22,5 +23,17 @@ var Turnos = {
       );
     });
   }
+  //Comentado hasta tener todo bien
+  //   historialList: () => {
+  //     return new Promise((resolve, reject) => {
+  //       db.query(historialListBuscar, (err, res) => {
+  //         if (err) {
+  //           reject(err);
+  //         } else {
+  //           resolve(res);
+  //         }
+  //       });
+  //     });
+  //   }
 };
 module.exports = Turnos;

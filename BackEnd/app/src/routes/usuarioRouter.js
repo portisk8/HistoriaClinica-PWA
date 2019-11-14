@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 api.use(bodyParser.urlencoded({ extended: true }));
 api.use(bodyParser.json());
 
-const userController = require("../controllers/userController");
+const usuarioController = require("../controllers/usuarioController");
 
-api.post("/registerUser", userController.register);
+api.post("/usuario/registrar", usuarioController.registrar);
+api.post("/usuario/login", usuarioController.login);
 
 module.exports = api;

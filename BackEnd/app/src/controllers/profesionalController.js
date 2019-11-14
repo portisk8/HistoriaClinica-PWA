@@ -1,4 +1,4 @@
-const profesionalesRepository = require("../repositories/profesionalesRepository");
+const profesionalesRepository = require("../repositories/profesionalRepository");
 
 module.exports = {
   obtenerPorEspecialidad: function(req, res) {

@@ -1,4 +1,4 @@
-const turnos = require("../models/turnosModel");
+const turnoRepository = require("../repositories/turnoRepository");
 
 module.exports = {
   turnoGuardar: function(req, res) {
@@ -8,8 +8,8 @@ module.exports = {
       paciente: req.body.paciente,
       medico: req.body.medico
     };
-    turnos
-      .turnoGuardar(turno)
+    turnoRepository
+      .guardar(turno)
       .then(data => {
         res.send(data);
       })
