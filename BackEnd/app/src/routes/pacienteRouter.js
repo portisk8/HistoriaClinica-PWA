@@ -7,6 +7,6 @@ api.use(bodyParser.json());
 const pacientesController = require('../controllers/pacientesController');
 
 api.post('/pacientes/registrar',pacientesController.registrar);
-api.post('/pacientes/prescripciones',pacientesController.prescripcionesEstadoCambiar);
+api.put('/pacientes/prescripciones',pacientesController.prescripcionesEstadoCambiar);
 
 module.exports = api;

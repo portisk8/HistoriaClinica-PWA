@@ -17,7 +17,7 @@ class PedirMedicamentos extends React.Component {
             user: sessionStorage.getItem("userData")
         }
 
-        this.pedirDrogas = this.pedirDrogas.bind(this);
+        this.PedirDrogas = this.PedirDrogas.bind(this);
     }
 
     
@@ -31,24 +31,27 @@ class PedirMedicamentos extends React.Component {
     DrogasList(dniNro){
            
         drogasNoEntregadas(dniNro).then((result) => { 
-            result[0].map((item) =>
+            console.log(result)
+            result.map((item) =>
                 this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})
             );
-            result[0].map((item) =>
+            result.map((item) =>
                 this.state.descontarDroga.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
             );
-            result[0].map((item) =>
+            result.map((item) =>
                 this.state.estadoPrescripcionesCambiar.push({dni: JSON.parse(this.state.user).dni, droga: item.droga, drogueria: item.drogueria})
             );
          
             this.setState({isLoaded: true}) 
-            
+            console.log(this.state.estadoPrescripcionesCambiar)
+            console.log(this.state.descontarDroga)
             });
              
     }//END DrogasList()-----------------------------------------------------------------------------------------------------------
 
     PedirDrogas(){
         console.log(this.state.descontarDroga)
+        console.log(this.state.estadoPrescripcionesCambiar)
         this.state.descontarDroga.forEach(element => {
             descontarStock(element).then(result => {
                 console.log(result);
@@ -72,7 +75,7 @@ class PedirMedicamentos extends React.Component {
                 <Header></Header>
                 <div> <div className="col-12">
                         <h2>Listado De Drogas Por Pedir</h2>
-                        <ul >
+                        <ul className="list-group">
                             {list.map(listItem => <li id={listItem.droga} name={listItem.droga} className="list-group-item">{listItem.droga} {listItem.cantidad} unidades</li>)}
                         </ul>
                     </div>

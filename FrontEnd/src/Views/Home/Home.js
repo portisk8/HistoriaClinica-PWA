@@ -22,11 +22,11 @@ class Home extends React.Component {
       isLogin: false,
       toLogin: false
     }
-    this.historialClinico = this.historialClinico.bind(this);
+    this.reservarTurno = this.reservarTurno.bind(this);
 
   }
 
-  historialClinico(){
+  reservarTurno(){
     if(sessionStorage.getItem("userData")){
       this.setState({isLogin: true})
   }else{
@@ -55,11 +55,9 @@ class Home extends React.Component {
 
 
         <div>
-          <Link from="/" to="/ReservarTurnos">
-            <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+            <button onClick={this.reservarTurno}  type="button" class="btn btn-info btn-lg btn-block">
               Reservar Turnos
-            </button>
-          </Link>
+            </button>    
         </div>
         <div>
 
@@ -72,9 +70,6 @@ class Home extends React.Component {
 
         <div>
       
-            <button onClick={this.historialClinico} type="button" class="btn btn-outline-secondary btn-lg btn-block">
-              HistorialClinico
-            </button>
           
         </div>
 

@@ -4,7 +4,7 @@ import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 import { Link } from 'react-router-dom';
-import { createUser, createPatient } from "../../Service/Register";
+import { createUser, pacienteRegistrar } from "../../Service/Register";
 import { postLogin } from "../../Service/PostLogin";
 import {Redirect} from 'react-router-dom';
 
@@ -48,17 +48,12 @@ class SingIn extends React.Component {
       dni: this.state.dni,
       nombre: this.state.nombre,
       apellido: this.state.apellido
-    }
-
-    if(this.state.dni && this.state.nombre && this.state.apellido){
-      createPatient(patientData).then(result => {
+    } 
+    
+    if(this.state.dni && this.state.nombre && this.state.password && this.state.apellido){
+      pacienteRegistrar(patientData).then(result => {
         console.log(result)
       })
-    }else{
-      alert("Faltan Rellenar Datos")
-    }
-    
-    if(this.state.dni && this.state.nombre && this.state.password){
       createUser(userData).then(result => {
         console.log(result)
         let userLogin ={
@@ -102,26 +97,26 @@ class SingIn extends React.Component {
           <form onSubmit={this.handleSubmit}>
   
           <div class="form-group">
-          <label for="exampleFormControlInput1">Numero DNI</label>
-          <input onChange={this.onChange} name="dni" class="form-control" type="text" placeholder="Ingresa tu DNI"></input>
+          <label for="exampleFormControlInput1">Numero DNI *</label>
+          <input onChange={this.onChange} name="dni" class="form-control" type="number" placeholder="Ingresa tu DNI"></input>
           </div>
             
             <div class="form-group">
   
-            <label for="exampleFormControlInput1">Nombre</label>
+            <label for="exampleFormControlInput1">Nombre *</label>
             <input onChange={this.onChange} name="nombre" class="form-control" type="text" placeholder="Ingresar nombre"></input>
   
             </div>
             <div class="form-group">
   
-            <label for="exampleFormControlInput1">Apellido</label>
+            <label for="exampleFormControlInput1">Apellido *</label>
             <input onChange={this.onChange} name="apellido" class="form-control" type="text" placeholder="Ingresar apellido"></input>
   
             </div>
   
             <div class="form-group">
   
-            <label for="exampleFormControlInput1">Contraseña</label>
+            <label for="exampleFormControlInput1">Contraseña *</label>
             <input onChange={this.onChange} name="password" class="form-control" type="password" placeholder="Ingresar contraseña"></input>
   
             </div>
@@ -158,12 +153,13 @@ class SingIn extends React.Component {
             <label for="exampleFormControlInput1">Numero</label>
             <input onChange={this.onChange} name="numero" class="form-control" type="text" placeholder="Ingresar Numero De Calle"></input>
             </div>
-  
+           
           </form> 
-          
           <div class="form-group">
-            <input type="submit" onClick={this.registerUser} class="btnSubmit" value="Registrarse" />
           </div>
+          <button class="btn btn-info btn-md btn-block" onClick={this.registerUser} >
+            Registrarse
+          </button>
           
           <Footer></Footer>
         </div>

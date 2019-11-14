@@ -7,7 +7,7 @@ class Header extends React.Component{
         super(props);
         this.state = { 
           isLogin: false,
-          toLogin: false
+          toLogin: false,
         };
         this.logout = this.logout.bind(this);
         this.historialClinico = this.historialClinico.bind(this);     
@@ -16,10 +16,13 @@ class Header extends React.Component{
     historialClinico(){
       if(sessionStorage.getItem("userData")){
         this.setState({isLogin: true})
+      
     }else{
       this.setState({toLogin: true})
     }
   }
+
+
     
     logout() {
       //document.getElementById("btnProv").style.display = "none";
@@ -46,16 +49,18 @@ class Header extends React.Component{
                 <Link to="/home"><p style={{color: "black"}}>Home</p></Link>
               </li>
 
+             
+
               <li className="nav-item">
                 <p style={{color: "black"}}  onClick={this.historialClinico}>Historial Clinico</p>
               </li>
               
               <li className="nav-item">
-                <Link from="/" to="/Login"><p style={{color: "black"}}  >Iniciar sesión</p></Link>
+                <Link from="/" to="/Login"><p style={{color: "black"}}  >Iniciar Sesión</p></Link>
               </li>
 
               <li className="nav-item">
-                <Link from="/" to="/SingIn"><p style={{color: "black"}} >Registrar nueva cuenta</p></Link>
+                <Link from="/" to="/SingIn"><p style={{color: "black"}} >Registrar Nueva Cuenta</p></Link>
               </li>
               
               <li className="nav-item">

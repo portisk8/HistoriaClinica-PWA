@@ -24,7 +24,7 @@ class MenuUsuario extends React.Component {
                 </Link>
                 
                 <Link from="/" to="/TurnosDisponibles">
-                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    <button  type="button" class="btn btn-info btn-lg btn-block">
                         Turnos Diponibles
                     </button>
                 </Link>
@@ -40,7 +40,7 @@ class MenuUsuario extends React.Component {
                 </h3>
                 
                 <Link from="/" to="/PedirMedicamentos">
-                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    <button  type="button" class="btn btn-info btn-lg btn-block">
                         Pedir Medicamentos Prescritos
                     </button>
                 </Link>
@@ -56,7 +56,7 @@ class MenuUsuario extends React.Component {
                 </h3>
                 
                 <Link from="/" to="/HistorialClinico">
-                    <button  type="button" class="btn btn-outline-secondary btn-lg btn-block">
+                    <button  type="button" class="btn btn-info btn-lg btn-block">
                         Historial Clínico
                     </button>
                 </Link>
