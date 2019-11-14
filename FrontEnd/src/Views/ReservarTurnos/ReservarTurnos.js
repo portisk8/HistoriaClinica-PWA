@@ -5,20 +5,23 @@ import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 import { getEspecialidades } from "../../Service/Especialidades";
 import { profesionalesObtener } from "../../Service/Profesionales";
-import { createForm, formShape } from "rc-form";
+import { disponibleObtener, guardarTurno } from "../../Service/Turnos";
+
+import moment from "moment";
+import DatePicker from "react-date-picker";
 
 class ReservarTurnos extends React.Component {
   constructor() {
     super();
     this.state = {
       especialidadList: [],
-      profesionalesList: []
+      profesionalesList: [],
+      formData: {
+        fechaConsulta: new Date(),
+        motivo: ""
+      }
     };
   }
-
-  static propTypes = {
-    form: formShape
-  };
 
   componentDidMount() {
     // const especialidades = async () => await getEspecialidades();
@@ -31,90 +34,130 @@ class ReservarTurnos extends React.Component {
     // console.log(especialidades);
   }
   onChangeEspecialidad = e => {
+    var { formData } = this.state;
     var especialidad = e.target.value;
     if (especialidad) {
+      formData.especialidad = especialidad;
       console.log(especialidad, "cambio especialidad");
       profesionalesObtener(especialidad).then(result => {
         console.log(result);
-        this.setState({ profesionalesList: result });
+        this.setState({
+          profesionalesList: result,
+          formData: formData
+        });
       });
     }
   };
 
   onChangeProfesional = e => {
+    var { formData } = this.state;
     var profesional = e.target.value;
     console.log(profesional, "cambio profesional");
+    if (profesional) {
+      formData.medico = profesional;
+      this.setState({ formData: formData });
+    }
   };
 
-  submit = () => {
-    this.props.form.validateFields((error, value) => {
-      console.log(error, value);
+  handleChangeFechaConsulta = e => {
+    var { formData } = this.state;
+    formData.fechaConsulta = e.value;
+    formData.fecha = e.value;
+    console.log(e.value, "cambio FECHA");
+    if (e.value) {
+      //   formData.fecha = moment(e);
+      //Turnos disponibles
+      disponibleObtener(formData).then(result => {
+        console.log(result);
+        formData.horaConsulta = result.turnoDisponible;
+        this.setState({
+          formData: formData
+        });
+      });
+    }
+  };
+  changeMotivo = e => {
+    console.log(e);
+  };
+
+  guardar = e => {
+    var { formData } = this.state;
+    console.log(e);
+    var horaConsultaSplit = formData.horaConsulta.split(":");
+    var fecha = formData.fechaConsulta.setHours(
+      horaConsultaSplit[0],
+      horaConsultaSplit[1]
+    );
+    debugger;
+    var form = {
+      fecha: moment(fecha),
+      hora: formData.horaConsulta,
+      profesional: formData.medico,
+      motivo: "Hola mundo",
+      paciente: JSON.parse(sessionStorage.getItem("userData")).dni
+    };
+    guardarTurno(form).then(result => {
+      console.log(result);
     });
   };
 
   render() {
-    let errors;
-    const { getFieldProps, getFieldError } = this.props.form;
-
     return (
       <div>
         <Header></Header>
         <h1>Reservar turno</h1>
 
-        <form>
-          <div class="form-group">
-            <label>Especialidad:</label>
-            <select
-              onChange={this.onChangeEspecialidad}
-              class="form-control"
-              {...getFieldProps("required", {
-                // onChange(){}, // have to write original onChange here if you need
-                rules: [{ required: true }]
+        <form onSubmit={this.guardar}>
+          <label>Especialidad:</label>
+          <select onChange={this.onChangeEspecialidad} class="form-control">
+            <option value={null}>Elija alguna opcion</option>
+            {this.state.especialidadList.length > 0 &&
+              this.state.especialidadList.map(value => {
+                return (
+                  <option value={value.descripcionEspecialidad}>
+                    {value.descripcionEspecialidad}
+                  </option>
+                );
               })}
-            >
-              <option value={null}>Elija alguna opcion</option>
-              {this.state.especialidadList.length > 0 &&
-                this.state.especialidadList.map(value => {
-                  return (
-                    <option value={value.descripcionEspecialidad}>
-                      {value.descripcionEspecialidad}
-                    </option>
-                  );
-                })}
-            </select>
+          </select>
 
-            <label>Profesional:</label>
-            <select
-              onChange={this.onChangeProfesional}
-              class="form-control"
-              disabled={this.state.profesionalesList.length < 1}
-              {...getFieldProps("required", {
-                // onChange(){}, // have to write original onChange here if you need
-                rules: [{ required: true }]
+          <label>Profesional:</label>
+          <select
+            onChange={this.onChangeProfesional}
+            class="form-control"
+            disabled={this.state.profesionalesList.length < 1}
+          >
+            <option value={null}>Elija un Profesional</option>
+            {this.state.profesionalesList.length > 0 &&
+              this.state.profesionalesList.map(value => {
+                return (
+                  <option value={value.nroMatricula}>
+                    {`${value.apellido}, ${value.nombre}`}
+                  </option>
+                );
               })}
-            >
-              <option value={null}>Elija un Profesional</option>
-              {this.state.profesionalesList.length > 0 &&
-                this.state.profesionalesList.map(value => {
-                  return (
-                    <option value={value.numeroMatricula}>
-                      {`${value.apellido}, ${value.nombre}`}
-                    </option>
-                  );
-                })}
-            </select>
+          </select>
 
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Motivo</label>
-              <input
-                onChange={this.onChange}
-                name="motivo"
-                class="form-control"
-                type="text"
-                placeholder="Ingresar Motivo"
-              ></input>
-            </div>
-          </div>
+          <DatePicker
+            onChange={value => this.handleChangeFechaConsulta({ value })}
+            value={this.state.formData.fechaConsulta}
+          />
+          {/* <DatePicker
+              onChange={value => this.handleChangeFechaConsulta({ value })}
+              value={this.state.formData.fechaConsulta}
+            /> */}
+
+          <label for="exampleFormControlInput1">
+            Motivo
+            <input
+              value={this.state.formData.motivo}
+              onChange={this.changeMotivo}
+              name="motivo"
+              class="form-control"
+              type="text"
+              placeholder="Ingresar Motivo"
+            />
+          </label>
 
           <div class="conainer">
             <div class="row">
@@ -129,11 +172,11 @@ class ReservarTurnos extends React.Component {
               </div>
               <div class="col">
                 <button
-                  onClick={() => this.props.history.push("MenuUsuario")}
-                  type="button"
+                  //   onClick={() => this.guardar()}
+                  type="submit"
                   class="btn btn-outline-secondary btn-lg btn-block"
                 >
-                  Cancelar
+                  Guardar
                 </button>
               </div>
             </div>
@@ -145,4 +188,4 @@ class ReservarTurnos extends React.Component {
   }
 }
 
-export default createForm()(ReservarTurnos);
+export default ReservarTurnos;
