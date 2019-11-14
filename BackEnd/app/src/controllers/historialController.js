@@ -12,9 +12,10 @@ module.exports = {
         res.send(error);
       });
   },
-  historialTurnos: function(req, res) {
-    historialRepository
-      .historialTurnosObtener()
+  historialTurnosObtener: function(req, res) {
+    //let dni = req.params.dni;
+    return historialRepository
+      .historialTurnosObtener(req.params.dni)
       .then(data => {
         res.send(data);
       })
