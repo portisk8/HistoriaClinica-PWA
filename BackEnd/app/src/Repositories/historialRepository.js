@@ -19,7 +19,7 @@ module.exports ={
           });
         });
       },
-      historialClinicoObtener: (dni) => {
+    /*  historialClinicoObtener: (dni) => {
         return new Promise((resolve, reject) => {
           db.query(`${historialClinicoSP}('${dni}');`, (err, res) => {
             if (err) {
@@ -32,7 +32,7 @@ module.exports ={
           });
     
         });
-      },
+      },*/
       historialTurnosObtener: (dni) => {
         return new Promise((resolve, reject) => {
             db.query(`${historialTurnos}(${dni})`, (err, res) => {
