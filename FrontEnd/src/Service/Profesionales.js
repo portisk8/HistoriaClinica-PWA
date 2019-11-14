@@ -6,7 +6,7 @@ const __APIURL = API_URL;
 export function getProfesionalesObtener(especialidad) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api profesionales");
-  return axiosRequest(`${__APIURL}/api/profesionales/${especialidad}`, {
+  return axiosRequest(`http://localhost:3001/api/profesionales/${especialidad}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"

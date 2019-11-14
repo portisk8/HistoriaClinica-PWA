@@ -19,7 +19,7 @@ export function mostrarDrogas(dni) {
 export function requestDrugs(dataDrugs){
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`${__APIURL}/api/requestDrugs`, {
+  return axiosRequest(`http://localhost:3001/api/requestDrugs`, {
     method: "POST",
     body: JSON.stringify(dataDrugs),
     headers: {
@@ -32,7 +32,7 @@ export function requestDrugs(dataDrugs){
 export function cambiarEstadoPrescripciones(dataPresc){
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`${__APIURL}/api/prescripciones`, {
+  return axiosRequest(`http://localhost:3001/api/prescripciones`, {
     method: "POST",
     body: JSON.stringify(dataPresc),
     headers: {

@@ -1,6 +1,3 @@
-//include the model (aka DB connection)
-var db = require("./dbConnection");
-
 //QUERYS
 const queryTurnoGuardar = "CALL Turno_Guardar";
 const historialListBuscar = "SELECT * FROM Turnos";
@@ -36,4 +33,3 @@ var Turnos = {
   //     });
   //   }
 };
-module.exports = Turnos;
