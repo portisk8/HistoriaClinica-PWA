@@ -2,7 +2,7 @@
 var db = require("./dbConnection");
 
 const estadoPrescripciones = "CALL PrescripcionesEstados_Cambiar";
-const PacientesRegistrar = "CALL Create_Patient";
+const PacientesRegistrar = "CALL Pacientes_Registrar";
 
  
 //create class

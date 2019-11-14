@@ -1,6 +1,6 @@
 DELIMITER $$
  
-CREATE PROCEDURE DrogasNoEntregadas (
+CREATE PROCEDURE DrogasNoEntregadas_Obtener (
     IN  dniU int
 )
 BEGIN
