@@ -16,5 +16,19 @@ module.exports = {
       .catch(error => {
         res.send(error);
       });
+  },
+  ultimoDisponibleObtener: function(req, res) {
+    var turno = {
+      fecha: req.body.fecha,
+      medico: req.body.medico
+    };
+    turnoRepository
+      .ultimoDisponibleObtener(turno)
+      .then(data => {
+        res.send(data);
+      })
+      .catch(error => {
+        res.send(error);
+      });
   }
 };
