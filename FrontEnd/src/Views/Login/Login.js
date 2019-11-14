@@ -32,7 +32,7 @@ class Login extends React.Component{
                 let responseJSON = result;
                 console.log(responseJSON)
                 //if exist token 
-                if(responseJSON.token){
+                if(responseJSON.token != undefined){
                     //set local storage with the api users response
                     sessionStorage.setItem('userData',JSON.stringify(responseJSON));
                     //redirect equals true, to redirect to the component dashboard

@@ -20,7 +20,7 @@ export function descontarStock(dataDrugs){
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
   return axiosRequest(`${__APIURL}/api/drogas/descontarstocks`, {
-    method: "POST",
+    method: "PUT",
     body: JSON.stringify(dataDrugs),
     headers: {
       "Content-Type": "application/json"
@@ -32,7 +32,7 @@ export function descontarStock(dataDrugs){
 export function estadoPrescripciones(dataPresc){
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`${__APIURL}/api/prescripciones`, {
+  return axiosRequest(`${__APIURL}/api/pacientes/prescripciones`, {
     method: "POST",
     body: JSON.stringify(dataPresc),
     headers: {
@@ -47,7 +47,7 @@ export function estadoPrescripciones(dataPresc){
 export function historialDrogas(dni) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`${__APIURL}/api/historialDrogas/${dni}`, {
+  return axiosRequest(`${__APIURL}/api/historiales/drogas/${dni}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"

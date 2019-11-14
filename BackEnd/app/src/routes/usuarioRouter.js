@@ -6,7 +6,7 @@ api.use(bodyParser.json());
 
 const usuarioController = require("../controllers/usuarioController");
 
-api.post("/usuario/registrar", usuarioController.registrar);
-api.post("/usuario/login", usuarioController.login);
+api.post("/usuarios/registrar", usuarioController.registrar);
+api.post("/usuarios/login", usuarioController.login);
 
 module.exports = api;

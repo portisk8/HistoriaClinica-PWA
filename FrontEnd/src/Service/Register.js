@@ -6,7 +6,7 @@ const __APIURL = API_URL;
 export function createUser(userData) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`${__APIURL}/api/registerUser`, {
+  return axiosRequest(`${__APIURL}/api/usuarios/registrar`, {
     method: "POST",
     body: JSON.stringify(userData),
     headers: {
@@ -16,10 +16,10 @@ export function createUser(userData) {
   }).then(response => response.data);
 }
 
-export function createPatient(userData) {
+export function pacienteRegistrar(userData) {
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
-  return axiosRequest(`http://localhost:3001/api/registerPatient`, {
+  return axiosRequest(`${__APIURL}/api/pacientes/registrar`, {
     method: "POST",
     body: JSON.stringify(userData),
     headers: {
