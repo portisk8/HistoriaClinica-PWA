@@ -1,7 +1,7 @@
 
 DELIMITER $$
  
-CREATE PROCEDURE Create_Patient (
+CREATE PROCEDURE Pacientes_Registrar (
     IN  dniP int,
     IN  nombreP varchar(30),
     IN  apellidoP varchar(30)

@@ -12,7 +12,6 @@ const turnoRouter = require("./app/src/routes/turnoRouter");
 const usuarioRouter = require("./app/src/routes/usuarioRouter");
 const drogaRouter = require("./app/src/routes/drogasRouter");
 const pacienteRouter = require("./app/src/routes/pacienteRouter");
-
 const historialRouter = require("./app/src/routes/historialRouter");
 
 app.use("/api", especialidadesRouter);

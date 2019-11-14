@@ -3,7 +3,7 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
-import { mostrarDrogas, requestDrugs, cambiarEstadoPrescripciones } from "../../Service/Drogas";
+import { drogasNoEntregadas, descontarStock, estadoPrescripciones } from "../../Service/Drogas";
 
 class PedirMedicamentos extends React.Component {
 
@@ -11,13 +11,13 @@ class PedirMedicamentos extends React.Component {
         super(props);
         this.state = {
             drogas: [],
-            askDrug: [],
-            changeStatePresc: [],
+            descontarDroga: [],
+            estadoPrescripcionesCambiar: [],
           //  isLoaded: false,
             user: sessionStorage.getItem("userData")
         }
 
-        this.AskDrug = this.AskDrug.bind(this);
+        this.pedirDrogas = this.pedirDrogas.bind(this);
     }
 
     
@@ -30,15 +30,15 @@ class PedirMedicamentos extends React.Component {
  
     DrogasList(dniNro){
            
-        mostrarDrogas(dniNro).then((result) => { 
+        drogasNoEntregadas(dniNro).then((result) => { 
             result[0].map((item) =>
                 this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})
             );
             result[0].map((item) =>
-                this.state.askDrug.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
+                this.state.descontarDroga.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
             );
             result[0].map((item) =>
-                this.state.changeStatePresc.push({dni: JSON.parse(this.state.user).dni, droga: item.droga, drogueria: item.drogueria})
+                this.state.estadoPrescripcionesCambiar.push({dni: JSON.parse(this.state.user).dni, droga: item.droga, drogueria: item.drogueria})
             );
          
             this.setState({isLoaded: true}) 
@@ -47,16 +47,16 @@ class PedirMedicamentos extends React.Component {
              
     }//END DrogasList()-----------------------------------------------------------------------------------------------------------
 
-    AskDrug(){
-        console.log(this.state.askDrug)
-        this.state.askDrug.forEach(element => {
-            requestDrugs(element).then(result => {
+    PedirDrogas(){
+        console.log(this.state.descontarDroga)
+        this.state.descontarDroga.forEach(element => {
+            descontarStock(element).then(result => {
                 console.log(result);
             }) 
         });
 
-        this.state.changeStatePresc.forEach(element => {
-            cambiarEstadoPrescripciones(element).then(result => {
+        this.state.estadoPrescripcionesCambiar.forEach(element => {
+            estadoPrescripciones(element).then(result => {
                 console.log(result);
             }) 
         });
@@ -77,7 +77,7 @@ class PedirMedicamentos extends React.Component {
                         </ul>
                     </div>
            
-                        <button onClick={this.AskDrug}  type="button" class="btn btn-primary btn-lg btn-block">
+                        <button onClick={this.PedirDrogas}  type="button" class="btn btn-primary btn-lg btn-block">
                             Pedir Medicamentos
                         </button>
                  

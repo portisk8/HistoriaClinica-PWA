@@ -1,6 +1,6 @@
 DELIMITER $$
  
-CREATE PROCEDURE RequestDrugs (
+CREATE PROCEDURE DrogasStock_Descontar (
     IN  droga varchar(50),
     IN  drogueria varchar(50),
     IN  cantidad int

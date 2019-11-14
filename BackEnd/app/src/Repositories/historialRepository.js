@@ -3,7 +3,8 @@ var db = require("./dbConnection");
 
 const historialClinicoSP = "CALL Historial_Clinico_Obtener";
 const drogaSP = "CALL DrogasHistorial_Obtener";
-const historialTurnosBuscar = "SELECT * FROM Turnos";
+const historialTurnos = "call Turnos_Historial";
+
 //create class
 
 module.exports ={
@@ -18,7 +19,7 @@ module.exports ={
           });
         });
       },
-      historialClinicoObtener: (dni) => {
+    /*  historialClinicoObtener: (dni) => {
         return new Promise((resolve, reject) => {
           db.query(`${historialClinicoSP}('${dni}');`, (err, res) => {
             if (err) {
@@ -31,18 +32,19 @@ module.exports ={
           });
     
         });
-      },
-      historialTurnosObtener: () => {
+      },*/
+      historialTurnosObtener: (dni) => {
         return new Promise((resolve, reject) => {
-          db.query(historialTurnosBuscar, (err, res) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(res);
-            }
-          });
+            db.query(`${historialTurnos}(${dni})`, (err, res) => {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(res);
+                }
+            });
         });
-      } 
+    }
 };
 
 

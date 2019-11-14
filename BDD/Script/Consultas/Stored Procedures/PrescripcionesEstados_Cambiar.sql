@@ -1,6 +1,6 @@
 DELIMITER $$
  
-CREATE PROCEDURE CambiarEstadoPrescripciones (
+CREATE PROCEDURE PrescripcionesEstados_Cambiar (
     IN  dniU int
     IN droga varchar(50),
     IN drogueria varchar(50)

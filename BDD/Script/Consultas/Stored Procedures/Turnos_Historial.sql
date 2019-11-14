@@ -1,6 +1,6 @@
 delimiter //
 
-create PROCEDURE HistorialTurnos (in dni int)
+create PROCEDURE Turnos_Historial (in dni int)
 BEGIN
 
     select      pro.especialidad,

@@ -1,6 +1,6 @@
 DELIMITER $$
  
-CREATE PROCEDURE HistorialDroga (
+CREATE PROCEDURE DrogasHistorial_Obtener (
     IN  dniU int
 )
 BEGIN
