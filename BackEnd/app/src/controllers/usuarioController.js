@@ -15,7 +15,7 @@ module.exports = {
           req.body.username,
           hashedPassword
         );
-        return userRepository
+        return usuarioRepository
           .crear(user)
           .then(data => {
             res.send(data);
@@ -28,7 +28,7 @@ module.exports = {
   login: function(req, res) {
     let login = loginModel.LoginModel(req.body.dni, req.body.password);
 
-    loginRepository.login(login.dni).then(user => {
+    usuarioRepository.login(login.dni).then(user => {
       bcrypt.compare(login.password, user[0][0].pass, function(err, result) {
         if (err) throw err;
         if (result) {
