@@ -1,8 +1,8 @@
-var express = require('express')
-var api = express.Router()
+var express = require("express");
+var api = express.Router();
 
-const historialDrogasController = require('../controllers/historialDrogaController');
+const historialDrogasController = require("../controllers/historialDrogaController");
 
-api.get('/historialDrogas/:dni',historialDrogasController.HistorialDrogas);
+api.get("/historialDrogas/:dni", historialDrogasController.HistorialDrogas);
 
 module.exports = api;

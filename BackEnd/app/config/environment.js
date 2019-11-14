@@ -1,4 +1,9 @@
-var config = require("./env.json")[process.env.NODE_ENV || "development"];
+var config = null;
+try {
+  config = require("./env.json")[process.env.NODE_ENV || "development"];
+} catch (error) {
+  config = process.env.NODE_ENV;
+}
 
 module.exports = {
   DB_HOST: config.DB_HOST,

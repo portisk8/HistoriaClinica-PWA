@@ -1,8 +1,8 @@
-var express = require('express')
-var api = express.Router()
+var express = require("express");
+var api = express.Router();
 
-const especialidadController = require('../controllers/especialidadController');
+const especialidadController = require("../controllers/especialidadController");
 
-api.get('/especialidades',especialidadController.listEspecialidades);
+api.get("/especialidades", especialidadController.listEspecialidades);
 
 module.exports = api;
