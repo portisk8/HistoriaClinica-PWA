@@ -7,10 +7,10 @@ module.exports = {
       }
     },
 
-    drogaNoEntregadaModel: function(droga, profesional, cantidad) {
+    drogaNoEntregadaModel: function(droga, cantidad) {
       return {
         droga: droga,
-        profesional: profesional,
+        drogueria: cantidad,
         cantidad: cantidad
       }
     }

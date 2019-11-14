@@ -10,7 +10,7 @@ module.exports = {
       .noEntregadasObtener(dni)
       .then(data => {
         data[0].forEach(element => {
-          drogaNoEntregada.push(drogasModel.drogaNoEntregadaModel(element.droga, element.profesional, element.cantidad))
+          drogaNoEntregada.push(drogasModel.drogaNoEntregadaModel(element.droga,element.drogueria, element.cantidad))
         });
         res.send(drogaNoEntregada);
       })
