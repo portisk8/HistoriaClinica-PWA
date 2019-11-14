@@ -1,12 +1,12 @@
 //const drugModel = require('../models/drugModel');
-const drugRepository = require('../repositories/drugRepository');
+const drogasRepository = require('../repositories/drogasRepository');
 
 
 module.exports = {
-    drug: function (req,res) {
+    drograsNoEntregadas: function (req,res) {
         let dni = req.params.dni;
-        return drugRepository
-        .GetDrogas(dni)
+        return drogasRepository
+        .noEntregadasObtener(dni)
         .then(data => {
           res.send(data);
         })
