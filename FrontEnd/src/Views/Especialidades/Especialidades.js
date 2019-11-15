@@ -36,7 +36,7 @@ class Especialidades extends React.Component {
               <button
                 type="button"
                 class="btn btn-outline-primary btn-lg btn-block"
-                onClick={() => this.goToEspecialidad(idx)}
+                onClick={() => this.goToEspecialidad(item.descripcionEspecialidad)}
                 style={{ marginBottom: 10 }}
               >
                 {item.descripcionEspecialidad}

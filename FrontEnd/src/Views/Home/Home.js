@@ -10,106 +10,134 @@ import "../../App.css";
 import Header from "../../components/headers/header";
 import Footer from "../../components/footer/footer";
 import SingIn from "../../Views/SingIn/SingIn";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Login from "../Login/Login";
-import { Redirect } from 'react-router-dom';
-
+import { Redirect } from "react-router-dom";
 
 class Home extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       isLogin: false,
       toLogin: false
-    }
+    };
     this.reservarTurno = this.reservarTurno.bind(this);
-
   }
 
-  reservarTurno(){
-    if(sessionStorage.getItem("userData")){
-      this.setState({isLogin: true})
-  }else{
-    this.setState({toLogin: true})
+  reservarTurno() {
+    if (sessionStorage.getItem("userData")) {
+      this.setState({ isLogin: true });
+    } else {
+      this.setState({ toLogin: true });
+    }
   }
-}
   render() {
-    if(this.state.isLogin){
-      return <Redirect to={"/HistorialClinico"}/>
-    }else if(this.state.toLogin){
-      return <Redirect to={"/Login"}/>
-    }else{
-    return (
-      <div>
-        <Header></Header>
-                
-        <h1 style={{textAlign: "center"}}>Hospital Salutem</h1>
-        
+    if (this.state.isLogin) {
+      return <Redirect to={"/ReservarTurnos"} />;
+    } else if (this.state.toLogin) {
+      return <Redirect to={"/Login"} />;
+    } else {
+      return (
         <div>
-          <Link from="/" to="/Especialidades">
-            <button /*onClick={this.routeChangeEspecialidades}*/ type="button" class="btn btn-info btn-lg btn-block">
-              Especialidades
-            </button>
-          </Link>
-        </div>
+          <Header></Header>
 
+          <h1 style={{ textAlign: "center" }}>Hospital Salutem</h1>
 
-        <div>
-            <button onClick={this.reservarTurno}  type="button" class="btn btn-info btn-lg btn-block">
+          <div>
+            <Link from="/" to="/Especialidades">
+              <button
+                /*onClick={this.routeChangeEspecialidades}*/ type="button"
+                class="btn btn-info btn-lg btn-block"
+              >
+                Especialidades
+              </button>
+            </Link>
+          </div>
+
+          <div>
+            <button
+              onClick={this.reservarTurno}
+              type="button"
+              class="btn btn-info btn-lg btn-block"
+            >
               Reservar Turnos
-            </button>    
-        </div>
-        <div>
-
-          <Link from="/" to="/TurnosDisponibles">
-            <button  type="button" class="btn btn-info btn-lg btn-block">
-              Turnos Diponibles
             </button>
-          </Link>
+          </div>
+          <div>
+            <Link from="/" to="/TurnosDisponibles">
+              <button type="button" class="btn btn-info btn-lg btn-block">
+                Turnos Diponibles
+              </button>
+            </Link>
+          </div>
+
+          <div></div>
+
+          <div
+            id="carouselExampleIndicators"
+            className="carousel slide"
+            data-interval="2000"
+            data-ride="carousel"
+          >
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="1"
+              ></li>
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="2"
+              ></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src={hospital3} alt="Second slide" />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src={hospital5} alt="Third slide" />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src={hospital6} alt="Second slide" />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src={hospital7} alt="Third slide" />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+          <Footer></Footer>
         </div>
-
-        <div>
-      
-          
-        </div>
-
-        <div id="carouselExampleIndicators" className="carousel slide" data-interval="2000" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-   
-    <div class="carousel-item active">
-      <img class="d-block w-100" src={hospital3} alt="Second slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src={hospital5} alt="Third slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src={hospital6} alt="Second slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src={hospital7} alt="Third slide"/>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-        
-        <Footer></Footer>
-      </div>
-    
-    );
-  }
+      );
+    }
   }
 }
 

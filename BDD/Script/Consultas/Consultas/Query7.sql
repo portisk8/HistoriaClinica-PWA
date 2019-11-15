@@ -1,3 +1,5 @@
+-- Query 7
+
 -- Listar los nombres, diagnósticos y obra social de los pacientes que estuvieron más tiempo internados durante el primer semestre de 2019.
 
 select *

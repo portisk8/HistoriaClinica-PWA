@@ -33,7 +33,7 @@ export function estadoPrescripciones(dataPresc){
   //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log("call api login");
   return axiosRequest(`${__APIURL}/api/pacientes/prescripciones`, {
-    method: "POST",
+    method: "PUT",
     body: JSON.stringify(dataPresc),
     headers: {
       "Content-Type": "application/json"
