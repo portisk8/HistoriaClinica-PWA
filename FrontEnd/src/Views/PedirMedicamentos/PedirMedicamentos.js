@@ -38,6 +38,7 @@ class PedirMedicamentos extends React.Component {
             result.map((item) =>
                 this.state.descontarDroga.push({droga: item.droga, drogueria: item.drogueria, cantidad: item.cantidad})
             );
+            console.log(this.state.descontarDroga)
             result.map((item) =>
                 this.state.estadoPrescripcionesCambiar.push({dni: JSON.parse(this.state.user).dni, droga: item.droga, drogueria: item.drogueria})
             );

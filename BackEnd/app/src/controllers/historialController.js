@@ -8,7 +8,7 @@ module.exports = {
       .historialDrogaObtener(req.params.dni)
       .then(data => {
           data[0].forEach(element => {
-              historialModel.push(HistorialModel.historialDrogas(element.droga, element.nombre, element.fechaAtencion))
+              historialModel.push(HistorialModel.historialDrogas(element.droga, element.nombre, element.duracion));
           });
         res.send(historialModel);
       })

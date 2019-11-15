@@ -30,6 +30,10 @@ class HistorialMedicamentos extends React.Component {
            
         historialDrogas(dniNro).then((result) => { 
             console.log(result)
+           /* result.forEach(item => {
+                this.state.drogas.push({droga: item.droga, profesional: item.profesional, fecha: item.fecha})
+ 
+            });*/
             result.map((item) =>
             this.state.drogas.push({droga: item.droga, profesional: item.profesional, fecha: item.fecha})
                // this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})

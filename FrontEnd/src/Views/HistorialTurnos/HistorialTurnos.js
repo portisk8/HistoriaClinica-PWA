@@ -24,7 +24,7 @@ class HistorialTurnos extends React.Component {
     historialList(dniNro){
            
         getHistorialTurnos(dniNro).then((result) => { 
-            result[0].map((item) =>
+            result.map((item) =>
                 this.state.historialTurnosList.push(item)
             );
 

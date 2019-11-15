@@ -10,7 +10,7 @@ const historialTurnos = "call Turnos_Historial";
 module.exports ={
     historialDrogaObtener: (dni) => {
         return new Promise((resolve, reject) => {
-          db.query(`${drogaSP}('${dni}');`, (err, res) => {
+          db.query(`${drogaSP}(${parseInt(dni)});`, (err, res) => {
             if (err) {
               reject(err);
             } else {
