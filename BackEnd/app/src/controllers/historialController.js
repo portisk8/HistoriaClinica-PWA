@@ -18,10 +18,15 @@ module.exports = {
   },
   historialTurnosObtener: function(req, res) {
     //let dni = req.params.dni;
-    return historialRepository
+    let historialModel = []
+    historialRepository
       .historialTurnosObtener(req.params.dni)
       .then(data => {
-        res.send(data);
+        data[0].forEach(element=> {
+          historialModel.push(HistorialModel.historialTurnos(element.especialidad,element.apellido,element.nombre,
+          element.anioAtencion,element.mesAtencion,element.diaAtencion,element.horaAtencion,element.estado))          
+        });
+        res.send(historialModel);
       })
       .catch(error => {
         res.send(error);

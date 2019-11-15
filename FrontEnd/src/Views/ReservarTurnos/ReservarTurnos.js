@@ -78,6 +78,9 @@ class ReservarTurnos extends React.Component {
   };
   changeMotivo = e => {
     console.log(e);
+    var { formData } = this.state;
+    formData.motivo = e.target.motivo;
+    this.setState({ formData: formData });
   };
 
   guardar = e => {
@@ -93,7 +96,7 @@ class ReservarTurnos extends React.Component {
       fecha: moment(fecha),
       hora: formData.horaConsulta,
       profesional: formData.medico,
-      motivo: "Hola mundo",
+      motivo: formData.motivo,
       paciente: JSON.parse(sessionStorage.getItem("userData")).dni
     };
     if(form){
