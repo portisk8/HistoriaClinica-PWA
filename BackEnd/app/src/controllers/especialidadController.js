@@ -1,7 +1,14 @@
-const arrayModel = require("../models/especialidadesModel");
+const especialidadRepository = require("../repositories/especialidadRepository");
 
 module.exports = {
   listEspecialidades: function(req, res) {
-    res.send(arrayModel);
+    especialidadRepository
+      .getEspecialidadesList()
+      .then(data => {
+        res.send(data);
+      })
+      .catch(error => {
+        res.send(error);
+      });
   }
 };

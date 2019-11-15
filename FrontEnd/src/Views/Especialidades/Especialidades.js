@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/headers/header";
 import { getEspecialidades } from "../../Service/Especialidades";
-
+import Footer from "../../components/footer/footer";
 class Especialidades extends React.Component {
   constructor() {
     super();
@@ -14,8 +14,8 @@ class Especialidades extends React.Component {
     // const especialidades = async () => await getEspecialidades();
     getEspecialidades().then(data => {
       console.log(data);
-      if (data && Array.isArray(data)){
-        this.setState({ especialidadList: data.items });
+      if (data && Array.isArray(data)) {
+        this.setState({ especialidadList: data });
       }
     });
     // console.log(especialidades);
@@ -36,13 +36,14 @@ class Especialidades extends React.Component {
               <button
                 type="button"
                 class="btn btn-outline-primary btn-lg btn-block"
-                onClick={() => this.goToEspecialidad(idx)}
+                onClick={() => this.goToEspecialidad(item.descripcionEspecialidad)}
                 style={{ marginBottom: 10 }}
               >
-                {item}
+                {item.descripcionEspecialidad}
               </button>
             </div>
           ))}
+          <Footer></Footer>
       </div>
     );
   }
