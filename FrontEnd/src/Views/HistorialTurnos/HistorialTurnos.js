@@ -16,15 +16,9 @@ class HistorialTurnos extends React.Component {
     
 
     componentDidMount() {
-        // const especialidades = async () => await getEspecialidades();
-        /*getHistorialTurnos().then(data => {
-        console.log(data);
-            if (data && Array.isArray(data)) {
-                this.setState({ historialTurnosList: data });
-            }
-        });*/
+        
         this.historialList(JSON.parse(this.state.user).dni);
-        // console.log(especialidades);
+        
     }
 
     historialList(dniNro){
@@ -46,27 +40,28 @@ class HistorialTurnos extends React.Component {
             return (
                 <div>
                     <Header></Header>
-                        <div>
-                            <div  className="col-12">
-                                <h1>
-                                    HISTORIAL TURNOS
-                                </h1>
-                                <ul>
+                        
+                        <div  className="col-12">
+                            <h1>
+                                HISTORIAL TURNOS
+                            </h1>
+                            <ul>
 
-                                    {list.map(listItem => 
-                                        <li  className="list-group-item">
-                                        
-                                        Especialidad: {listItem.especialidad} <br/> 
-                                        Profesional: {listItem.apellido}, {listItem.nombre} <br/>
-                                        Fecha Asignada: {listItem.diaAsignado}/{listItem.mesAsignado}/{listItem.anioAsignado} <br/>
-                                        Horario Asignado: {listItem.horaAtencion} <br/>
-                                        Estado: {listItem.estado}
-                                        </li>
-                                    )}
+                                {list.map(listItem => 
+                                    <li  className="list-group-item">
+                                    
+                                    Especialidad: {listItem.especialidad} <br/>      
+                                    Profesional: {listItem.apellido}, {listItem.nombre} <br/>
+                                    Fecha Atención: {listItem.diaAtencion}/{listItem.mesAtencion}/{listItem.anioAtencion} <br/>
+                                    Horario Atención: {listItem.horaAtencion} <br/>
+                                    Estado: {listItem.estado}
+                                    
+                                    </li>
+                                )}
             
                                 </ul>
                             </div>
-                        </div>
+                        
                     <Footer></Footer>
                 </div>
             );
