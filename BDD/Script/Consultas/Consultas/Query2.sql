@@ -1,3 +1,5 @@
+-- Query 2
+
 -- ¿Cuál es el diagnóstico que más se dio durante 2018?
 
 select  m.descripcion,

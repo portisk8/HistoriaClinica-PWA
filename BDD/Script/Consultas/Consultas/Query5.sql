@@ -1,3 +1,4 @@
+-- QUERY 5 **********
 -- Listar los exámenes de laboratorios que aún no tienen resultados.
 select  p.apellido as apellidoPaciente,
 		p.nombre as nombrePaciente,
