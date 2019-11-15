@@ -1,3 +1,5 @@
+-- Query 4
+
 -- Listar las drogas que están por debajo de su stock mínimo.
 
 select  d.nombreComercial

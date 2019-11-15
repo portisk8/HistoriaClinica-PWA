@@ -1,3 +1,5 @@
+-- QUERY 3 **********
+
 -- Listar los nombres, apellidos y especialidad de los médicos que tienen turnos reservados para el 20/12/2019.
 
 select  p.nombre, 

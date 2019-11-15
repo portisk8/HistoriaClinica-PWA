@@ -1,3 +1,5 @@
+-- Query 6
+
 -- Listar las drogas cuyos proveedores tienen contratos que vences antes de fin de año.
 
 select distinct d.nombreComercial 
