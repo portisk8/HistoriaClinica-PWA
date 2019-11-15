@@ -195,7 +195,7 @@ create table AtencionMedica(
 
 create table Prescripciones(
     prescripcionesId int auto_increment,
-    atencionMedica int not null,
+    atencionMedica int not null unique,
     paciente int not null,
     estado varchar(20) not null,
     cantidad varchar(60) not null,
