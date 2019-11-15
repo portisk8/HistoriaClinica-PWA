@@ -29,8 +29,9 @@ class HistorialMedicamentos extends React.Component {
     historialList(dniNro){
            
         historialDrogas(dniNro).then((result) => { 
-            result[0].map((item) =>
-            this.state.drogas.push({droga: item.droga, profesional: item.nombre, fecha: item.fechaAtencion})
+            console.log(result)
+            result.map((item) =>
+            this.state.drogas.push({droga: item.droga, profesional: item.profesional, fecha: item.fecha})
                // this.state.drogas.push({droga: item.droga, cantidad: item.cantidad})
             );
 
@@ -50,7 +51,7 @@ class HistorialMedicamentos extends React.Component {
                 <div> <div className="col-12">
                         <h2>Historial de Medicamentos</h2>
                         <ul className="list-group">
-                            {list.map(listItem => <li id={listItem.droga} name={listItem.droga} className="list-group-item">Droga: {listItem.droga}, Profesional: {listItem.profesional}, Fecha: {listItem.fecha} unidades</li>)}
+                            {list.map(listItem => <li id={listItem.droga} name={listItem.droga} className="list-group-item">Droga: {listItem.droga}, Profesional: {listItem.profesional}, Fecha: {listItem.fecha}</li>)}
                         </ul>
                     </div>
                  

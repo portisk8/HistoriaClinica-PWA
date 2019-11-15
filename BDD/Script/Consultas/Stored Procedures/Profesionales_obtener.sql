@@ -5,8 +5,8 @@ CREATE PROCEDURE Profesionales_obtener (
 )
 BEGIN
     
-		SELECT p.nombre, p.apellido, p.nroMatricula 
-			from Profesionales p where p.descripcion = descripcionE;
+		SELECT p.nombre, p.apellido, p.numeroMatricula  as nroMatricula
+			from Profesionales p where p.especialidad = descripcionE;
 	
 END$$
  

@@ -83,13 +83,16 @@ create table Profesionales(
 );
 
 create table Turnos(
+    turnoId int auto_increment,
     fechaAsignacion date not null,
     horaAsignacion time not null,
     motivoConsulta varchar(80),
     atencionMedicaId int unique,
     paciente int not null,
     profesional int not null,
-    primary key(fechaAsignacion, horaAsignacion)
+    fechaAtencion date,
+    horaAtencion time,
+    primary key(turnoId)
 );
 
 create table Emergencias(

@@ -3,10 +3,11 @@ const turnoRepository = require("../repositories/turnoRepository");
 module.exports = {
   turnoGuardar: function(req, res) {
     var turno = {
-      fecha: req.body.fecha,
+      fecha: req.body.fecha.split("T")[0],
+      hora: req.body.hora,
       motivo: req.body.motivo,
       paciente: req.body.paciente,
-      medico: req.body.medico
+      profesional: req.body.profesional
     };
     turnoRepository
       .guardar(turno)
@@ -19,7 +20,7 @@ module.exports = {
   },
   ultimoDisponibleObtener: function(req, res) {
     var turno = {
-      fecha: req.body.fecha,
+      fecha: req.body.fecha.split("T")[0],
       medico: req.body.medico
     };
     turnoRepository
